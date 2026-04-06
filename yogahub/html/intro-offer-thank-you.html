@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You are in — yogahub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    background: #ffffff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- Layout --- */
+
+  .section {
+    width: 100%;
+    padding: 64px 24px;
+  }
+
+  .section--white {
+    background: #ffffff;
+  }
+
+  .section--rose {
+    background: #D8C4C4;
+  }
+
+  .section--grey {
+    background: #f0f0f0;
+  }
+
+  .section__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* --- Wave dividers --- */
+
+  .wave-divider {
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: 0;
+  }
+
+  .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- Typography --- */
+
+  .micro-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: #000000;
+  }
+
+  h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    color: #000000;
+  }
+
+  h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    color: #000000;
+  }
+
+  h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: #000000;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    color: #000000;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  .subheadline {
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #000000;
+  }
+
+  /* --- Buttons --- */
+
+  .btn {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    padding: 14px 32px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+    text-align: center;
+  }
+
+  .btn--primary {
+    background: #fd9598;
+    color: #000000;
+  }
+
+  .btn--primary:hover {
+    background: #fc7e82;
+    color: #000000;
+  }
+
+  .btn--secondary {
+    background: #D8C4C4;
+    color: #000000;
+  }
+
+  .btn--secondary:hover {
+    background: #cbb4b4;
+    color: #000000;
+  }
+
+  /* --- Confirmation details --- */
+
+  .confirmation-box {
+    border: 1px solid #cbb4b4;
+    padding: 28px 24px;
+    margin: 32px 0;
+  }
+
+  .confirmation-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9375rem;
+  }
+
+  .confirmation-row:last-child {
+    border-bottom: none;
+  }
+
+  .confirmation-row__label {
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-right: 16px;
+  }
+
+  .confirmation-row__value {
+    text-align: right;
+    font-weight: 400;
+  }
+
+  .confirmation-note {
+    font-size: 0.875rem;
+    color: #000000;
+    margin-top: 24px;
+    line-height: 1.6;
+  }
+
+  /* --- Tips list --- */
+
+  .tips-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .tips-list li {
+    padding: 20px 0;
+    border-bottom: 1px solid #cbb4b4;
+  }
+
+  .tips-list li:first-child {
+    padding-top: 0;
+  }
+
+  .tips-list li:last-child {
+    border-bottom: none;
+  }
+
+  .tips-list li strong {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  .tips-list li span {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  /* --- Pricing table --- */
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 0.9375rem;
+  }
+
+  .pricing-table th,
+  .pricing-table td {
+    text-align: left;
+    padding: 12px 12px;
+    border-bottom: 1px solid #cbb4b4;
+  }
+
+  .pricing-table th {
+    font-weight: 600;
+    font-size: 0.8125rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #000000;
+  }
+
+  .pricing-table td {
+    font-weight: 400;
+  }
+
+  .pricing-table .highlight {
+    font-weight: 700;
+    color: #000000;
+  }
+
+  .pricing-footnote {
+    font-size: 0.8125rem;
+    font-style: italic;
+    color: #000000;
+    margin-top: 8px;
+  }
+
+  /* --- Membership highlights --- */
+
+  .membership-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0 0;
+  }
+
+  .membership-highlights li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 8px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  .membership-highlights li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #000000;
+  }
+
+  /* --- Timeline --- */
+
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 28px 0;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 6px;
+    width: 1px;
+    height: calc(100% - 16px);
+    background: #cbb4b4;
+  }
+
+  .timeline-step {
+    position: relative;
+    padding-bottom: 28px;
+  }
+
+  .timeline-step:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-step::before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    background: #D8C4C4;
+    border: 2px solid #000000;
+    border-radius: 50%;
+  }
+
+  .timeline-step__label {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .timeline-step__text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  /* --- Footer --- */
+
+  .footer {
+    padding: 40px 24px;
+    border-top: 1px solid #f0f0f0;
+    text-align: center;
+  }
+
+  .footer p {
+    font-size: 0.8125rem;
+    color: #000000;
+    line-height: 1.6;
+  }
+
+  .footer a {
+    color: #000000;
+    text-decoration: underline;
+  }
+
+  .footer a:hover {
+    color: #fd9598;
+  }
+
+  /* --- Utility --- */
+
+  .text-center {
+    text-align: center;
+  }
+
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+  .mt-24 { margin-top: 24px; }
+  .mt-32 { margin-top: 32px; }
+  .mb-8 { margin-bottom: 8px; }
+  .mb-16 { margin-bottom: 16px; }
+  .mb-24 { margin-bottom: 24px; }
+  .mb-32 { margin-bottom: 32px; }
+
+  .rule {
+    border: none;
+    border-top: 1px solid #cbb4b4;
+    margin: 32px 0;
+  }
+
+  /* --- Responsive --- */
+
+  @media (min-width: 768px) {
+    .section {
+      padding: 80px 40px;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2.125rem;
+    }
+
+    .subheadline {
+      font-size: 1.125rem;
+    }
+
+    .btn {
+      padding: 16px 40px;
+      font-size: 1rem;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 14px 16px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .section {
+      padding: 96px 40px;
+    }
+
+    h1 {
+      font-size: 3.25rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .pricing-table {
+      font-size: 0.8125rem;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 10px 8px;
+    }
+
+    .confirmation-row {
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .confirmation-row__value {
+      text-align: left;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- ====== CONFIRMATION HEADER ====== -->
+  <section class="section section--white">
+    <div class="section__inner text-center">
+      <p class="micro-label">YOU ARE IN</p>
+      <h1>Welcome to yogahub. Every studio is yours.</h1>
+      <p class="subheadline">Your 2 Week Unlimited Pass is active. You have 14 days of yoga, pilates, barre, and hot classes across every yogahub location. No restrictions. No limits. Let us get you booked in.</p>
+
+      <div class="confirmation-box">
+        <div class="confirmation-row">
+          <span class="confirmation-row__label">Pass</span>
+          <span class="confirmation-row__value">2 Week Unlimited Intro Offer</span>
+        </div>
+        <div class="confirmation-row">
+          <span class="confirmation-row__label">Price Paid</span>
+          <span class="confirmation-row__value">&euro;49</span>
+        </div>
+        <div class="confirmation-row">
+          <span class="confirmation-row__label">Valid From</span>
+          <span class="confirmation-row__value" id="valid-from">[purchase date]</span>
+        </div>
+        <div class="confirmation-row">
+          <span class="confirmation-row__label">Valid Until</span>
+          <span class="confirmation-row__value" id="valid-until">[purchase date + 14 days]</span>
+        </div>
+        <div class="confirmation-row">
+          <span class="confirmation-row__label">Studios</span>
+          <span class="confirmation-row__value">Every yogahub location</span>
+        </div>
+        <div class="confirmation-row">
+          <span class="confirmation-row__label">Classes Included</span>
+          <span class="confirmation-row__value">Yoga, mat pilates, barre, hot classes</span>
+        </div>
+        <div class="confirmation-row">
+          <span class="confirmation-row__label">Not Included</span>
+          <span class="confirmation-row__value">Reformer pilates</span>
+        </div>
+      </div>
+
+      <p class="confirmation-note">A confirmation email is on its way to <strong>[email address]</strong>. Check your inbox (and spam folder, just in case).</p>
+    </div>
+  </section>
+
+  <!-- Wave: white to rose -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#D8C4C4"/>
+    </svg>
+  </div>
+
+  <!-- ====== BOOK YOUR FIRST CLASS ====== -->
+  <section class="section section--rose">
+    <div class="section__inner text-center">
+      <p class="micro-label">NEXT STEP</p>
+      <h2>Do not wait. Book your first class now.</h2>
+      <p>The best way to start is to just start. Browse the timetable, pick a class at any studio, and book your spot. Remember — arrive 5 minutes before the class starts.</p>
+      <div class="mt-32">
+        <a href="https://yogahub.ie/timetable" class="btn btn--primary">Browse the Timetable and Book</a>
+      </div>
+      <p class="mt-24" style="font-size: 0.9375rem;">You can book as many classes as you want per day. No limit. Try a different studio every day if you like.</p>
+    </div>
+  </section>
+
+  <!-- Wave: rose to white -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,0 Z" fill="#D8C4C4"/>
+    </svg>
+  </div>
+
+  <!-- ====== EXPLORE THE STUDIOS ====== -->
+  <section class="section section--white">
+    <div class="section__inner text-center">
+      <h2>Your pass works everywhere. Here is where to find us.</h2>
+
+      <!-- Placeholder for interactive map or dynamic studio list -->
+      <div style="border: 1px solid #cbb4b4; padding: 48px 24px; margin: 32px 0; text-align: center;">
+        <p style="font-size: 0.875rem; color: #666; margin: 0; letter-spacing: 0.1em; text-transform: uppercase;">Interactive map or studio list — dynamically populated based on current yogahub locations</p>
+      </div>
+
+      <p>Each studio has its own timetable and class mix. Browse them all and plan your week.</p>
+      <div class="mt-32">
+        <a href="https://yogahub.ie/studios" class="btn btn--secondary">View All Studios</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: white to grey -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,20 1440,40 L1440,80 L0,80 Z" fill="#f0f0f0"/>
+    </svg>
+  </div>
+
+  <!-- ====== QUICK TIPS ====== -->
+  <section class="section section--grey">
+    <div class="section__inner">
+      <h2>First time? Here is what to know.</h2>
+      <ul class="tips-list">
+        <li>
+          <strong>Arrive 5 minutes early</strong>
+          <span>Give yourself time to settle in. Late arrivals are not permitted and may count as a late cancellation.</span>
+        </li>
+        <li>
+          <strong>Bring water and a towel</strong>
+          <span>Especially for hot classes. You will want both.</span>
+        </li>
+        <li>
+          <strong>Wear whatever is comfortable</strong>
+          <span>Leggings, shorts, a t-shirt — whatever lets you move. No special gear needed.</span>
+        </li>
+        <li>
+          <strong>Do not worry about being new</strong>
+          <span>Every single member started exactly where you are. Instructors cater to all levels and will help you find modifications if needed.</span>
+        </li>
+        <li>
+          <strong>Cancellation reminder</strong>
+          <span>Need to cancel a booking? Do it at least 6 hours before the class start time to avoid a &euro;5 fee.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Wave: grey to white -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L0,40 C360,0 720,80 1080,40 C1260,20 1380,60 1440,40 L1440,0 Z" fill="#f0f0f0"/>
+    </svg>
+  </div>
+
+  <!-- ====== MEMBERSHIP UPSELL ====== -->
+  <section class="section section--white">
+    <div class="section__inner">
+      <h2>Already thinking about what comes next? Good.</h2>
+      <p>When your 2 weeks are up, you will have an exclusive promo code waiting for you: <strong>20% off your first two months</strong> of any yogahub membership.</p>
+      <p>No rush. Enjoy your intro pass first. But when you are ready, here is what is available:</p>
+
+      <div style="overflow-x: auto;">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Membership</th>
+              <th>Price / 28 Days</th>
+              <th>With 20% Off</th>
+              <th>Per Class</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8 Classes</td>
+              <td>&euro;99</td>
+              <td class="highlight">&euro;79.20</td>
+              <td>&euro;12.37</td>
+            </tr>
+            <tr>
+              <td>12 Classes</td>
+              <td>&euro;139</td>
+              <td class="highlight">&euro;111.20</td>
+              <td>&euro;11.58</td>
+            </tr>
+            <tr>
+              <td>Unlimited</td>
+              <td>&euro;219</td>
+              <td class="highlight">&euro;175.20</td>
+              <td>~&euro;11.52*</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="pricing-footnote">*Based on average of 19 sessions per month among unlimited members.</p>
+
+      <ul class="membership-highlights">
+        <li>Valid at every yogahub studio</li>
+        <li>Includes yoga, mat pilates, barre, and hot classes</li>
+        <li>Renews every 28 days</li>
+        <li>Cancel anytime after the first payment (10 days notice before next auto-payment)</li>
+        <li>Does not include reformer pilates</li>
+      </ul>
+
+      <p class="mt-24">We will send your promo code via email towards the end of your intro pass.</p>
+    </div>
+  </section>
+
+  <!-- Wave: white to rose -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C180,80 360,0 540,40 C720,80 900,0 1080,40 C1260,80 1380,20 1440,40 L1440,80 L0,80 Z" fill="#D8C4C4"/>
+    </svg>
+  </div>
+
+  <!-- ====== TIMELINE ====== -->
+  <section class="section section--rose">
+    <div class="section__inner">
+      <h2>Your 14 days at a glance.</h2>
+      <div class="timeline">
+        <div class="timeline-step">
+          <span class="timeline-step__label">Now</span>
+          <span class="timeline-step__text">Book your first class. Try any studio.</span>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step__label">Day 1–7</span>
+          <span class="timeline-step__text">Explore. Try different classes, different studios, different times. Find what works for you.</span>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step__label">Day 7</span>
+          <span class="timeline-step__text">You will receive a check-in email from us with your exclusive promo code (YOGAHUB20) for 20% off your first two months of membership.</span>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step__label">Day 13</span>
+          <span class="timeline-step__text">We will remind you that your pass is about to expire. If you want to keep going, your membership discount is ready to use.</span>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step__label">Day 14</span>
+          <span class="timeline-step__text">Your pass expires. No automatic charge. No surprise renewal. Your choice.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave: rose to white -->
+  <div class="wave-divider">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 L0,40 C240,0 480,80 720,40 C960,0 1200,80 1440,40 L1440,0 Z" fill="#D8C4C4"/>
+    </svg>
+  </div>
+
+  <!-- ====== SOCIAL / SHARE ====== -->
+  <section class="section section--white">
+    <div class="section__inner text-center">
+      <h2>Know someone who would love this?</h2>
+      <p>The intro offer is for new clients only. If you have a friend, partner, or colleague who has been meaning to try yoga, pilates, or barre — send them the link. Every studio. One pass. &euro;49. They can grab their own.</p>
+      <div class="mt-32">
+        <a href="https://yogahub.ie/intro-offer" class="btn btn--secondary">Share the Intro Offer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="footer">
+    <p><strong>Your pass:</strong> 2 Week Unlimited — Every Studio&nbsp;&nbsp;|&nbsp;&nbsp;<strong>Valid:</strong> <span id="footer-start">[start date]</span> — <span id="footer-end">[end date]</span></p>
+    <p class="mt-8">Questions? Visit <a href="https://yogahub.ie">yogahub.ie</a> or contact your local studio.</p>
+  </footer>
+
+</body>
+</html>
