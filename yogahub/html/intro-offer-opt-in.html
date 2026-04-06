@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register for the yogahub Intro Offer — Every Studio, One Pass</title>
+  <meta name="description" content="For the first time, one yogahub pass works at every studio. €49 for 14 days of unlimited yoga, mat pilates, barre, and hot classes. Register for early access.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 400;
+      color: #000000;
+      background: #ffffff;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Layout ── */
+
+    .section {
+      width: 100%;
+      padding: 64px 24px;
+    }
+
+    .section--white { background: #ffffff; }
+    .section--rose  { background: #D8C4C4; }
+    .section--grey  { background: #f0f0f0; }
+
+    .section__inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* ── Typography ── */
+
+    .micro-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .subheadline {
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.7;
+      max-width: 600px;
+    }
+
+    .rule {
+      border: none;
+      border-top: 1px solid #000000;
+      margin: 32px 0;
+      opacity: 0.15;
+    }
+
+    /* ── Buttons ── */
+
+    .btn {
+      display: inline-block;
+      font-family: 'Quicksand', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 16px 40px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s ease, color 0.2s ease;
+      background: #D8C4C4;
+      color: #000000;
+    }
+
+    .btn:hover {
+      background: #cbb4b4;
+    }
+
+    .btn--full {
+      display: block;
+      width: 100%;
+    }
+
+    /* ── Wave dividers ── */
+
+    .wave-divider {
+      display: block;
+      width: 100%;
+      height: auto;
+      line-height: 0;
+    }
+
+    .wave-divider svg {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    /* wave from white to rose */
+    .wave--white-to-rose { background: #ffffff; }
+    .wave--white-to-rose svg { fill: #D8C4C4; }
+
+    /* wave from rose to white */
+    .wave--rose-to-white { background: #D8C4C4; }
+    .wave--rose-to-white svg { fill: #ffffff; }
+
+    /* wave from white to grey */
+    .wave--white-to-grey { background: #ffffff; }
+    .wave--white-to-grey svg { fill: #f0f0f0; }
+
+    /* wave from grey to white */
+    .wave--grey-to-white { background: #f0f0f0; }
+    .wave--grey-to-white svg { fill: #ffffff; }
+
+    /* wave from rose to grey */
+    .wave--rose-to-grey { background: #D8C4C4; }
+    .wave--rose-to-grey svg { fill: #f0f0f0; }
+
+    /* wave from grey to rose */
+    .wave--grey-to-rose { background: #f0f0f0; }
+    .wave--grey-to-rose svg { fill: #D8C4C4; }
+
+    /* wave from white to white (not used but just in case) */
+    .wave--rose-to-rose { background: #D8C4C4; }
+    .wave--rose-to-rose svg { fill: #D8C4C4; }
+
+    /* ── Hero ── */
+
+    .hero {
+      padding: 80px 24px 64px;
+      text-align: center;
+    }
+
+    .hero .subheadline {
+      margin: 0 auto 32px;
+    }
+
+    .hero .micro-label {
+      margin-bottom: 20px;
+    }
+
+    /* ── Class cards (What's Included) ── */
+
+    .class-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      margin-bottom: 24px;
+    }
+
+    .class-item {
+      border-top: 1px solid rgba(0,0,0,0.12);
+      padding-top: 16px;
+    }
+
+    .class-item h3 {
+      margin-bottom: 6px;
+    }
+
+    .class-item p {
+      font-size: 0.95rem;
+    }
+
+    .note-text {
+      font-size: 0.85rem;
+      font-weight: 500;
+      opacity: 0.7;
+      margin-top: 8px;
+    }
+
+    /* ── Form ── */
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      padding: 14px 16px;
+      border: 1px solid #cbb4b4;
+      background: #ffffff;
+      color: #000000;
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .form-group input::placeholder {
+      color: #999;
+      font-weight: 300;
+    }
+
+    .form-group input:focus {
+      border-color: #000000;
+    }
+
+    .consent-text {
+      font-size: 0.78rem;
+      font-weight: 400;
+      line-height: 1.6;
+      opacity: 0.6;
+      margin-top: 16px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 32px 0;
+    }
+
+    .form-success p {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+
+    /* ── Testimonials ── */
+
+    .testimonial {
+      border-left: 1px solid rgba(0,0,0,0.2);
+      padding-left: 24px;
+      margin-bottom: 32px;
+      font-style: italic;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .testimonial cite {
+      display: block;
+      font-style: normal;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-top: 8px;
+      opacity: 0.7;
+    }
+
+    .stats-line {
+      font-weight: 500;
+      font-size: 0.95rem;
+      opacity: 0.8;
+    }
+
+    /* ── FAQ ── */
+
+    .faq-item {
+      border-top: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid rgba(0,0,0,0.12);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #000000;
+      text-align: left;
+      line-height: 1.4;
+    }
+
+    .faq-question:hover {
+      opacity: 0.7;
+    }
+
+    .faq-icon {
+      flex-shrink: 0;
+      margin-left: 16px;
+      font-size: 1.2rem;
+      font-weight: 300;
+      transition: transform 0.2s ease;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .faq-answer-inner {
+      padding: 0 0 18px;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+
+    .footer {
+      padding: 40px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .footer p {
+      font-size: 0.85rem;
+      opacity: 0.6;
+    }
+
+    .footer a {
+      color: #000000;
+      font-weight: 600;
+    }
+
+    /* ── Sticky mobile CTA ── */
+
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 24px;
+      background: #ffffff;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      z-index: 100;
+    }
+
+    .sticky-cta .btn {
+      width: 100%;
+    }
+
+    /* ── Responsive ── */
+
+    @media (min-width: 768px) {
+      .section {
+        padding: 80px 40px;
+      }
+
+      .hero {
+        padding: 100px 40px 80px;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      h2 {
+        font-size: 2.2rem;
+      }
+
+      .class-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      h1 {
+        font-size: 3.6rem;
+      }
+
+      .hero {
+        padding: 120px 40px 96px;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .sticky-cta {
+        display: block;
+      }
+
+      /* add bottom padding so sticky CTA doesn't overlap content */
+      body {
+        padding-bottom: 72px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════ HERO ════════════ -->
+  <section class="hero section section--white">
+    <div class="section__inner">
+      <p class="micro-label">New at yogahub</p>
+      <h1>One pass. Every studio.<br>For the first time ever.</h1>
+      <p class="subheadline">We are changing how yogahub works. No more choosing one studio. No more limits. For &euro;49, get 14 days of unlimited access to every class at every yogahub location. Yoga. Mat pilates. Barre. Hot classes. All of it.</p>
+      <p class="subheadline" style="margin-bottom: 36px;">This is the first time we have done this. Register now to be the first to know when it goes live.</p>
+      <a href="#register" class="btn">Register for Early Access</a>
+    </div>
+  </section>
+
+  <!-- wave: white → rose -->
+  <div class="wave-divider wave--white-to-rose">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════ WHAT'S CHANGING ════════════ -->
+  <section class="section section--rose">
+    <div class="section__inner">
+      <h2>This is a big one.</h2>
+      <p>Until now, yogahub passes were tied to a single studio. That meant choosing one location and sticking with it.</p>
+      <p>Not any more.</p>
+      <p>Our new 2 Week Unlimited Intro Offer gives you access to <strong>every yogahub studio</strong> with a single pass. Try a vinyasa in Ranelagh on Monday. Mat pilates in Rathmines on Wednesday. A hot class in Camden on Friday. Your call.</p>
+      <p><strong>&euro;49. 14 days. Every studio. No restrictions on how many classes you take.</strong></p>
+    </div>
+  </section>
+
+  <!-- wave: rose → white -->
+  <div class="wave-divider wave--rose-to-white">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C360,0 720,80 1080,20 C1260,0 1380,30 1440,40 L1440,80 L0,80 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════ WHAT'S INCLUDED ════════════ -->
+  <section class="section section--white">
+    <div class="section__inner">
+      <h2>What's included</h2>
+      <div class="class-grid">
+        <div class="class-item">
+          <h3>Yoga</h3>
+          <p>From slow flow to power vinyasa. Every level, every mood. Morning calm or evening movement.</p>
+        </div>
+        <div class="class-item">
+          <h3>Mat Pilates</h3>
+          <p>Core-focused, full-body work. You, the mat, and an instructor who knows their craft.</p>
+        </div>
+        <div class="class-item">
+          <h3>Barre</h3>
+          <p>Low impact, high intensity. Ballet-inspired movements blended with pilates and strength work.</p>
+        </div>
+        <div class="class-item">
+          <h3>Hot Classes</h3>
+          <p>Heated studios. Hot yoga and hot mat-based classes. Walk out feeling completely renewed.</p>
+        </div>
+      </div>
+      <p class="note-text">Does not include reformer pilates. Reformer pilates requires a separate membership.</p>
+    </div>
+  </section>
+
+  <!-- wave: white → rose -->
+  <div class="wave-divider wave--white-to-rose">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,20 C180,60 360,0 540,40 C720,80 900,10 1080,40 C1260,70 1380,20 1440,30 L1440,80 L0,80 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════ OPT-IN FORM ════════════ -->
+  <section class="section section--rose" id="register">
+    <div class="section__inner">
+      <h2>Be the first to get access.</h2>
+
+      <form id="optinForm" novalidate>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Your email address" required>
+        </div>
+        <div class="form-group">
+          <label for="whatsapp">WhatsApp Number</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="Your WhatsApp number (e.g. +353 87 123 4567)" required>
+        </div>
+        <button type="submit" class="btn btn--full" style="margin-top: 8px;">Register Now</button>
+        <p class="consent-text">By registering, you agree to receive updates about the yogahub intro offer via email and WhatsApp. You can unsubscribe at any time. We will never share your details.</p>
+      </form>
+
+      <div class="form-success" id="formSuccess">
+        <p>You are registered. We will send you a message the moment the offer goes live. Keep an eye on your inbox and WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: rose → white -->
+  <div class="wave-divider wave--rose-to-white">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,30 C240,70 480,0 720,50 C960,80 1200,10 1440,40 L1440,80 L0,80 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════ SOCIAL PROOF ════════════ -->
+  <section class="section section--white">
+    <div class="section__inner">
+      <h2>Why people are excited about this.</h2>
+
+      <div class="testimonial">
+        <p>"I've been going to the Rathmines studio for a year but always wanted to try Camden's hot classes. This is exactly what I needed."</p>
+        <cite>yogahub member</cite>
+      </div>
+
+      <div class="testimonial">
+        <p>"One pass for every studio is a game-changer. About time."</p>
+        <cite>yogahub member</cite>
+      </div>
+
+      <hr class="rule">
+
+      <p class="stats-line">Multiple studios across Dublin and Sligo. Hundreds of classes every week. Thousands of members strong.</p>
+    </div>
+  </section>
+
+  <!-- wave: white → grey -->
+  <div class="wave-divider wave--white-to-grey">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,50 C320,10 640,70 960,30 C1120,10 1300,60 1440,40 L1440,80 L0,80 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════ FAQ ════════════ -->
+  <section class="section section--grey">
+    <div class="section__inner">
+      <h2>A few questions you might have.</h2>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>When does the offer go live?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Soon. Register above and you will be the first to know. We will notify you via email and WhatsApp.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>How much is it?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            &euro;49 for 14 days of unlimited access across every yogahub studio.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Can I really go to any studio?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes. Every single one. That is the whole point.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>What classes are included?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yoga, mat pilates, barre, and hot mat-based classes. Reformer pilates is not included.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>Is this only for new clients?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Yes. The intro offer is for new yogahub clients only.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          <span>What happens after the 2 weeks?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            Nothing automatic. No surprise charges. Your pass simply expires. If you want to continue, we have membership options starting from &euro;99/month.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: grey → white -->
+  <div class="wave-divider wave--grey-to-white">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
+    </svg>
+  </div>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="footer">
+    <p>yogahub &mdash; yoga, pilates, barre, and hot classes across Dublin and Sligo.</p>
+    <p style="margin-top: 8px;">Questions? Visit <a href="https://yogahub.ie">yogahub.ie</a> or contact your local studio.</p>
+  </footer>
+
+  <!-- ════════════ STICKY MOBILE CTA ════════════ -->
+  <div class="sticky-cta" id="stickyCta">
+    <a href="#register" class="btn">Register for Early Access</a>
+  </div>
+
+  <script>
+    /* ── FAQ accordion ── */
+    document.querySelectorAll('.faq-question').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.parentElement;
+        var answer = item.querySelector('.faq-answer');
+        var isActive = item.classList.contains('active');
+
+        // close all
+        document.querySelectorAll('.faq-item').forEach(function(el) {
+          el.classList.remove('active');
+          el.querySelector('.faq-answer').style.maxHeight = null;
+          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+        });
+
+        // open clicked (if it was closed)
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* ── Form submit (inline confirmation) ── */
+    document.getElementById('optinForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In production, replace with actual form submission (e.g. fetch to API)
+      this.style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    });
+
+    /* ── Hide sticky CTA when form section is in view ── */
+    (function() {
+      var stickyCta = document.getElementById('stickyCta');
+      var registerSection = document.getElementById('register');
+
+      if (!stickyCta || !registerSection || window.innerWidth >= 768) return;
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          stickyCta.style.opacity = entry.isIntersecting ? '0' : '1';
+          stickyCta.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+        });
+      }, { threshold: 0.2 });
+
+      observer.observe(registerSection);
+
+      stickyCta.style.transition = 'opacity 0.3s ease';
+    })();
+  </script>
+
+</body>
+</html>
