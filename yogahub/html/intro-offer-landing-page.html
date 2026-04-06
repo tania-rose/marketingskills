@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 Week Unlimited Intro Offer — Every Studio, €49 | yogahub</title>
+<meta name="description" content="For the first time, one pass works at every yogahub studio. €49 for 14 days of unlimited yoga, mat pilates, barre, and hot classes across Dublin and Sligo. New clients only.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 400;
+    color: #000000;
+    background: #ffffff;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- Layout --- */
+
+  .section {
+    width: 100%;
+    padding: 64px 24px;
+    position: relative;
+  }
+
+  .section--white {
+    background: #ffffff;
+  }
+
+  .section--rose {
+    background: #D8C4C4;
+  }
+
+  .section--grey {
+    background: #f0f0f0;
+  }
+
+  .section__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  /* --- Wave Dividers --- */
+
+  .wave-divider {
+    display: block;
+    width: 100%;
+    height: auto;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* --- Typography --- */
+
+  .micro-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: #000000;
+  }
+
+  h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: #000000;
+  }
+
+  h2 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+    color: #000000;
+  }
+
+  h3 {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 1.15rem;
+    line-height: 1.35;
+    margin-bottom: 8px;
+    color: #000000;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    color: #000000;
+  }
+
+  .subheadline {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+    margin-bottom: 32px;
+    color: #000000;
+  }
+
+  .supporting-text {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #555555;
+    margin-top: 12px;
+  }
+
+  /* --- Buttons --- */
+
+  .btn {
+    display: inline-block;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    padding: 16px 36px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    color: #000000;
+  }
+
+  .btn--primary {
+    background: #fd9598;
+    color: #000000;
+  }
+
+  .btn--primary:hover {
+    background: #fc7e82;
+  }
+
+  .btn--secondary {
+    background: #D8C4C4;
+    color: #000000;
+  }
+
+  .btn--secondary:hover {
+    background: #cbb4b4;
+  }
+
+  /* --- Social Proof Bar --- */
+
+  .proof-bar {
+    width: 100%;
+    padding: 20px 24px;
+    background: #f0f0f0;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .proof-bar__inner {
+    max-width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 24px;
+  }
+
+  .proof-bar__item {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #000000;
+    white-space: nowrap;
+  }
+
+  .proof-bar__item::after {
+    content: '|';
+    margin-left: 24px;
+    color: #cbb4b4;
+  }
+
+  .proof-bar__item:last-child::after {
+    content: '';
+    margin-left: 0;
+  }
+
+  /* --- Class Grid --- */
+
+  .class-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-top: 32px;
+  }
+
+  .class-card {
+    border-top: 1px solid #000000;
+    padding-top: 16px;
+  }
+
+  .class-card h3 {
+    margin-bottom: 8px;
+  }
+
+  .class-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  .class-note {
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #555555;
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid #cbb4b4;
+  }
+
+  /* --- Steps --- */
+
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 32px;
+    margin-bottom: 40px;
+  }
+
+  .step {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .step__number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #000000;
+  }
+
+  .step__content h3 {
+    margin-bottom: 4px;
+  }
+
+  .step__content p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  /* --- Feature Blocks --- */
+
+  .features {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 32px;
+  }
+
+  .feature {
+    border-top: 1px solid #000000;
+    padding-top: 16px;
+  }
+
+  .feature h3 {
+    margin-bottom: 8px;
+  }
+
+  .feature p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+  }
+
+  /* --- FAQ Accordion --- */
+
+  .faq-list {
+    margin-top: 32px;
+  }
+
+  .faq-item {
+    border-top: 1px solid #cbb4b4;
+  }
+
+  .faq-item:last-child {
+    border-bottom: 1px solid #cbb4b4;
+  }
+
+  .faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-align: left;
+    padding: 18px 32px 18px 0;
+    cursor: pointer;
+    color: #000000;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .faq-question::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item.open .faq-question::after {
+    content: '\2013';
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .faq-answer p {
+    padding-bottom: 18px;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #333333;
+  }
+
+  /* --- Pricing Table --- */
+
+  .pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    font-size: 0.85rem;
+  }
+
+  .pricing-table th {
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 12px;
+    border-bottom: 2px solid #000000;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .pricing-table td {
+    padding: 12px 12px;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+  }
+
+  .pricing-table tr:last-child td {
+    border-bottom: 1px solid #000000;
+  }
+
+  .membership-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 32px 0;
+  }
+
+  .membership-highlights li {
+    font-size: 0.9rem;
+    padding: 6px 0;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  .membership-highlights li:last-child {
+    border-bottom: none;
+  }
+
+  .membership-highlights li::before {
+    content: '\2014\00a0';
+    color: #cbb4b4;
+  }
+
+  .pricing-footnote {
+    font-size: 0.78rem;
+    color: #555555;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+
+  /* --- Footer / T&Cs --- */
+
+  .footer {
+    padding: 40px 24px;
+    border-top: 1px solid #e0e0e0;
+    background: #ffffff;
+  }
+
+  .footer__inner {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .footer h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .footer ol {
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .footer li {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #555555;
+    margin-bottom: 4px;
+  }
+
+  /* --- Sticky Mobile CTA --- */
+
+  .sticky-cta {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #e0e0e0;
+    padding: 12px 24px;
+    z-index: 100;
+    text-align: center;
+  }
+
+  .sticky-cta .btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+    font-size: 0.9rem;
+  }
+
+  /* --- Section Rule --- */
+
+  .rule {
+    border: none;
+    border-top: 1px solid #cbb4b4;
+    margin: 32px 0;
+  }
+
+  /* --- Responsive --- */
+
+  @media (min-width: 768px) {
+    .section {
+      padding: 80px 40px;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+    }
+
+    .class-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .steps {
+      gap: 48px;
+    }
+
+    .proof-bar__inner {
+      gap: 8px 32px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .section {
+      padding: 100px 40px;
+    }
+
+    h1 {
+      font-size: 3.6rem;
+    }
+
+    h2 {
+      font-size: 2.4rem;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .sticky-cta {
+      display: block;
+    }
+
+    body {
+      padding-bottom: 72px;
+    }
+
+    .pricing-table {
+      font-size: 0.78rem;
+    }
+
+    .pricing-table th,
+    .pricing-table td {
+      padding: 10px 8px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<section class="section section--white">
+  <div class="section__inner">
+    <p class="micro-label">NEW — ALL STUDIOS, ONE PASS</p>
+    <h1>Every studio. Every class. 2 weeks. €49.</h1>
+    <p class="subheadline">Get 14 days of unlimited access across every yogahub location. Yoga. Mat pilates. Barre. Hot classes. No cap on how many classes you take. No single-studio restrictions. Just show up wherever you want, whenever you want.</p>
+    <a href="#" class="btn btn--primary cta-link" data-default-id="6790" data-google-id="6789">Get My 2 Week Pass — €49</a>
+    <p class="supporting-text">New clients only. Your 14 days start from the date of purchase.</p>
+  </div>
+</section>
+
+<!-- Wave: white to grey -->
+<div class="wave-divider" style="background: #ffffff;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#f0f0f0"/>
+  </svg>
+</div>
+
+<!-- ============ SOCIAL PROOF BAR ============ -->
+<div class="proof-bar" style="border: none;">
+  <div class="proof-bar__inner">
+    <span class="proof-bar__item">Every yogahub Studio</span>
+    <span class="proof-bar__item">Hundreds of Classes Every Week</span>
+    <span class="proof-bar__item">Thousands of Members</span>
+    <span class="proof-bar__item">Dublin and Sligo</span>
+  </div>
+</div>
+
+<!-- Wave: grey to rose -->
+<div class="wave-divider" style="background: #f0f0f0;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,0 480,80 720,40 C960,0 1200,60 1440,40 L1440,80 L0,80 Z" fill="#D8C4C4"/>
+  </svg>
+</div>
+
+<!-- ============ THE BIG CHANGE ============ -->
+<section class="section section--rose">
+  <div class="section__inner">
+    <h2>This is something we have never done before.</h2>
+    <p>yogahub has always been about community. But until now, your pass was tied to one studio. You picked a location and that was it.</p>
+    <p>We heard you. That is over.</p>
+    <p>The new 2 Week Unlimited Intro Offer opens the doors to <strong>every yogahub studio</strong> with a single pass. Ranelagh, Rathmines, Camden, Phibsborough, Drumcondra, and beyond. One purchase. Every location. No limits on classes per day.</p>
+    <p>This is the most flexible intro offer we have ever created.</p>
+  </div>
+</section>
+
+<!-- Wave: rose to white -->
+<div class="wave-divider" style="background: #D8C4C4;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C180,80 540,0 900,40 C1080,60 1320,20 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- ============ WHAT'S INCLUDED ============ -->
+<section class="section section--white">
+  <div class="section__inner">
+    <h2>Everything you need to find your practice.</h2>
+    <div class="class-grid">
+      <div class="class-card">
+        <h3>Yoga</h3>
+        <p>From slow flow to power vinyasa. Every level, every mood. Morning calm or evening movement — your call.</p>
+      </div>
+      <div class="class-card">
+        <h3>Mat Pilates</h3>
+        <p>Core-focused, full-body work. No machines. Just you, the mat, and an instructor who will not let you cut corners on form.</p>
+      </div>
+      <div class="class-card">
+        <h3>Barre</h3>
+        <p>Low impact. High burn. Ballet-inspired movements blended with pilates and strength work. Your legs will thank you eventually.</p>
+      </div>
+      <div class="class-card">
+        <h3>Hot Classes</h3>
+        <p>Turn up the heat. Hot yoga and hot mat-based classes in our heated studios. Walk out feeling completely renewed.</p>
+      </div>
+    </div>
+    <p class="class-note">This intro offer does not include reformer pilates classes. Reformer pilates requires a separate membership.</p>
+  </div>
+</section>
+
+<!-- Wave: white to rose -->
+<div class="wave-divider" style="background: #ffffff;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,30 1440,40 L1440,80 L0,80 Z" fill="#D8C4C4"/>
+  </svg>
+</div>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="section section--rose">
+  <div class="section__inner">
+    <h2>3 steps. That is it.</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h3>Buy your 2 Week Pass</h3>
+          <p>Pick it up right here. Takes 30 seconds. Your 14 days start from the date of purchase.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h3>Book your classes</h3>
+          <p>Browse the timetable and book into any class across every yogahub studio. No limit on how many you take per day.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h3>Show up and move</h3>
+          <p>Arrive 5 minutes before class. Roll out your mat. Let the instructor take it from there.</p>
+        </div>
+      </div>
+    </div>
+    <a href="#" class="btn btn--secondary cta-link" data-default-id="6790" data-google-id="6789" style="background: #ffffff; color: #000000;">Get My 2 Week Pass — €49</a>
+  </div>
+</section>
+
+<!-- Wave: rose to white -->
+<div class="wave-divider" style="background: #D8C4C4;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,80 600,0 960,40 C1140,60 1320,30 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- ============ WHY YOGAHUB ============ -->
+<section class="section section--white">
+  <div class="section__inner">
+    <h2>Every studio. One pass. Zero restrictions.</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Go wherever suits you</h3>
+        <p>Multiple locations across Dublin and Sligo. There is always a yogahub near wherever you are — home, work, or somewhere in between. Morning, lunch, evening. Classes run all day, every day.</p>
+      </div>
+      <div class="feature">
+        <h3>Mix it up every single day</h3>
+        <p>Yoga on Monday. Barre on Tuesday. A hot class on Wednesday. Mat pilates on Thursday. You do not have to choose one discipline or one studio. That is the whole point.</p>
+      </div>
+      <div class="feature">
+        <h3>Real instructors who know their craft</h3>
+        <p>Every class is led by experienced instructors. Not a screen. Not a recording. A real person who adjusts, encourages, and meets you where you are.</p>
+      </div>
+      <div class="feature">
+        <h3>The community you have been looking for</h3>
+        <p>yogahub is not a gym. It is a space where people show up for themselves and for each other. You will feel that from your very first class.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave: white to grey -->
+<div class="wave-divider" style="background: #ffffff;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C180,0 540,80 900,40 C1100,20 1300,50 1440,40 L1440,80 L0,80 Z" fill="#f0f0f0"/>
+  </svg>
+</div>
+
+<!-- ============ FAQ ============ -->
+<section class="section section--grey">
+  <div class="section__inner">
+    <h2>Questions? Sorted.</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">I have never done yoga, pilates, or barre before. Can I still do this?</button>
+        <div class="faq-answer">
+          <p>Absolutely. Our classes cater to all levels. Instructors offer modifications so you can go at your own pace. This is exactly how most of our members started.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I go to any studio?</button>
+        <div class="faq-answer">
+          <p>Yes. Your 2 Week Pass is valid at every yogahub location. Try a few and find your favourite.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Is there a limit on how many classes I can take?</button>
+        <div class="faq-answer">
+          <p>No limit. You can take as many classes per day as you like for the full 14 days.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What about reformer pilates?</button>
+        <div class="faq-answer">
+          <p>The intro offer covers yoga, mat pilates, barre, and hot mat-based classes. Reformer pilates is not included and requires a separate membership.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is the cancellation policy for classes?</button>
+        <div class="faq-answer">
+          <p>You can cancel a booking free of charge up to 6 hours before the class starts. Cancellations within 6 hours incur a €5 fee. Late arrivals are not permitted and may be counted as a late cancellation. Please arrive 5 minutes early.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I share this with a friend?</button>
+        <div class="faq-answer">
+          <p>The pass is non-transferable and non-refundable. But tell your friend to grab their own. It is a proper deal.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What happens after the 2 weeks?</button>
+        <div class="faq-answer">
+          <p>No automatic charge. No surprise renewal. If you love it (and we think you will), you will have an exclusive 20% off code to continue with a membership.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Wave: grey to white -->
+<div class="wave-divider" style="background: #f0f0f0;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- ============ MEMBERSHIP UPSELL ============ -->
+<section class="section section--white">
+  <div class="section__inner">
+    <h2>Love it? Keep going for less.</h2>
+    <p>When your 2 weeks are up, use your exclusive promo code to get <strong>20% off your first two months</strong> of any yogahub membership.</p>
+    <div style="overflow-x: auto;">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Membership</th>
+            <th>Price</th>
+            <th>Per Class</th>
+            <th>With 20% Off</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>8 Classes / 28 days</td>
+            <td>€99</td>
+            <td>€12.37 / class</td>
+            <td>€79.20</td>
+          </tr>
+          <tr>
+            <td>12 Classes / 28 days</td>
+            <td>€139</td>
+            <td>€11.58 / class</td>
+            <td>€111.20</td>
+          </tr>
+          <tr>
+            <td>Unlimited</td>
+            <td>€219</td>
+            <td>~€11.52 / class*</td>
+            <td>€175.20</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="pricing-footnote">*Based on average of 19 sessions per month among unlimited members (Jan-Mar data).</p>
+    <ul class="membership-highlights">
+      <li>Valid at every yogahub studio</li>
+      <li>Includes yoga, mat pilates, barre, and hot classes</li>
+      <li>Renews every 28 days</li>
+      <li>Cancel anytime after the first payment — just email us at least 10 days before your next auto-payment</li>
+      <li>Does not include reformer pilates</li>
+    </ul>
+    <a href="#" class="btn btn--secondary cta-link" data-default-id="6790" data-google-id="6789">Get My 2 Week Pass First — €49</a>
+  </div>
+</section>
+
+<!-- Wave: white to rose -->
+<div class="wave-divider" style="background: #ffffff;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C240,0 480,80 720,40 C960,0 1200,60 1440,40 L1440,80 L0,80 Z" fill="#D8C4C4"/>
+  </svg>
+</div>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="section section--rose">
+  <div class="section__inner">
+    <h2>Your mat is waiting.</h2>
+    <p>14 days. Every studio. Unlimited classes. €49. No commitment after that. No auto-renewal. Just a proper chance to see if yogahub is your thing.</p>
+    <a href="#" class="btn btn--primary cta-link" data-default-id="6790" data-google-id="6789" style="margin-bottom: 12px;">Get My 2 Week Pass — €49</a>
+    <p class="supporting-text">New clients only. Non-transferable. Non-refundable. Valid for 14 days from purchase.</p>
+  </div>
+</section>
+
+<!-- Wave: rose to white (footer) -->
+<div class="wave-divider" style="background: #D8C4C4;">
+  <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,40 C180,80 540,0 900,40 C1080,60 1320,20 1440,40 L1440,80 L0,80 Z" fill="#ffffff"/>
+  </svg>
+</div>
+
+<!-- ============ FOOTER / T&Cs ============ -->
+<footer class="footer">
+  <div class="footer__inner">
+    <h3>2 Week Unlimited Intro Offer — Terms and Conditions</h3>
+    <ol>
+      <li>This offer is available to new yogahub clients only.</li>
+      <li>The pass is non-transferable and non-refundable.</li>
+      <li>Valid at all yogahub studio locations.</li>
+      <li>Valid for 14 days from the date of purchase.</li>
+      <li>No restrictions on the number of classes taken per day.</li>
+      <li>Includes yoga, mat pilates, barre, and hot mat-based classes.</li>
+      <li>Does not include reformer pilates.</li>
+      <li>Bookings can be cancelled free of charge up to 6 hours before the scheduled class start time.</li>
+      <li>Cancellations made within 6 hours of the class start time will incur a €5 fee.</li>
+      <li>Late arrivals are not permitted and may be counted as a late cancellation. Please arrive 5 minutes ahead of the scheduled start time.</li>
+    </ol>
+  </div>
+</footer>
+
+<!-- ============ STICKY MOBILE CTA ============ -->
+<div class="sticky-cta">
+  <a href="#" class="btn btn--primary cta-link" data-default-id="6790" data-google-id="6789">Get My 2 Week Pass — €49</a>
+</div>
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+(function() {
+  // --- Checkout link switching ---
+  var params = new URLSearchParams(window.location.search);
+  var isGoogle = params.get('utm_source') === 'google';
+  var baseUrl = 'https://cart.mindbodyonline.com/sites/76702/cart/add_service?item[id]=';
+  var suffix = '&item[type]=service';
+  var links = document.querySelectorAll('.cta-link');
+
+  links.forEach(function(link) {
+    var id = isGoogle ? link.getAttribute('data-google-id') : link.getAttribute('data-default-id');
+    link.href = baseUrl + id + suffix;
+  });
+
+  // --- FAQ accordion ---
+  var faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(function(item) {
+    var question = item.querySelector('.faq-question');
+    var answer = item.querySelector('.faq-answer');
+
+    question.addEventListener('click', function() {
+      var isOpen = item.classList.contains('open');
+
+      // Close all
+      faqItems.forEach(function(otherItem) {
+        otherItem.classList.remove('open');
+        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+      });
+
+      // Open clicked (if it was closed)
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
