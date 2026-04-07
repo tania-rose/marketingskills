@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2 Week Unlimited Intro Offer — €49 | YogaHub Dublin</title>
+  <meta name="description" content="Try unlimited yoga, mat pilates, barre and hot classes across all 8 YogaHub studios for just €49. New clients only. 14 days. No commitment.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --color-primary: #2d5016;
+      --color-primary-dark: #1e3a0f;
+      --color-accent: #a8c686;
+      --color-bg: #faf9f6;
+      --color-white: #ffffff;
+      --color-text: #1a1a1a;
+      --color-text-light: #555555;
+      --color-border: #e0ddd6;
+      --font-heading: 'Georgia', 'Times New Roman', serif;
+      --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --max-width: 1100px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---- NAV BAR ---- */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--color-border);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 10px 22px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--color-primary-dark); }
+
+    /* ---- HERO ---- */
+    .hero {
+      padding: 140px 24px 80px;
+      text-align: center;
+      background: linear-gradient(180deg, #e8f0db 0%, var(--color-bg) 100%);
+    }
+    .hero-inner { max-width: 750px; margin: 0 auto; }
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.2;
+      color: var(--color-primary-dark);
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--color-text-light);
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .hero-fine {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin-top: 14px;
+    }
+
+    /* ---- BUTTONS ---- */
+    .btn {
+      display: inline-block;
+      background: var(--color-primary);
+      color: var(--color-white);
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn:hover { background: var(--color-primary-dark); transform: translateY(-1px); }
+
+    /* ---- SOCIAL PROOF BAR ---- */
+    .proof-bar {
+      background: var(--color-primary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 18px 24px;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    .proof-bar span { margin: 0 16px; opacity: 0.7; }
+
+    /* ---- SECTIONS ---- */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: var(--max-width); margin: 0 auto; }
+    .section-label {
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--color-primary-dark);
+      margin-bottom: 48px;
+      line-height: 1.25;
+    }
+
+    /* ---- WHAT'S INCLUDED (cards) ---- */
+    .included { background: var(--color-white); }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+    .card {
+      background: var(--color-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 12px;
+      padding: 32px 28px;
+    }
+    .card-icon { font-size: 2rem; margin-bottom: 14px; }
+    .card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: var(--color-primary-dark);
+    }
+    .card p { font-size: 0.95rem; color: var(--color-text-light); line-height: 1.6; }
+    .included-note {
+      margin-top: 28px;
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ---- HOW IT WORKS ---- */
+    .steps { background: var(--color-bg); }
+    .step-list { max-width: 640px; margin: 0 auto; }
+    .step {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 40px;
+      align-items: flex-start;
+    }
+    .step:last-child { margin-bottom: 0; }
+    .step-num {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+    .step h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+      color: var(--color-primary-dark);
+    }
+    .step p { font-size: 0.95rem; color: var(--color-text-light); }
+
+    /* ---- WHY YOGAHUB ---- */
+    .why { background: var(--color-white); }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 36px;
+    }
+    .why-item h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+      color: var(--color-primary-dark);
+    }
+    .why-item p { font-size: 0.95rem; color: var(--color-text-light); }
+
+    /* ---- FAQ ---- */
+    .faq { background: var(--color-bg); }
+    .faq-list { max-width: 700px; margin: 0 auto; }
+    .faq-item {
+      border-bottom: 1px solid var(--color-border);
+      padding: 24px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid var(--color-border); }
+    .faq-q {
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1rem;
+      color: var(--color-text);
+      background: none;
+      border: none;
+      width: 100%;
+      text-align: left;
+      padding: 0;
+      font-family: var(--font-body);
+      line-height: 1.5;
+    }
+    .faq-q::after {
+      content: '+';
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-left: 16px;
+      transition: transform 0.2s;
+      color: var(--color-primary);
+    }
+    .faq-q[aria-expanded="true"]::after { content: '−'; }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-a-inner {
+      padding-top: 12px;
+      font-size: 0.95rem;
+      color: var(--color-text-light);
+      line-height: 1.7;
+    }
+
+    /* ---- MEMBERSHIP UPSELL ---- */
+    .upsell { background: var(--color-white); }
+    .upsell-inner { max-width: 700px; margin: 0 auto; text-align: center; }
+    .upsell-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 0.95rem;
+    }
+    .upsell-table th {
+      text-align: left;
+      padding: 12px 16px;
+      background: var(--color-primary);
+      color: var(--color-white);
+      font-weight: 600;
+    }
+    .upsell-table th:first-child { border-radius: 8px 0 0 0; }
+    .upsell-table th:last-child { border-radius: 0 8px 0 0; }
+    .upsell-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .upsell-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+    .upsell-table tr:last-child td:last-child { border-radius: 0 0 8px 0; }
+    .upsell-note {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+      margin-top: 8px;
+    }
+    .upsell-promo {
+      font-size: 1.05rem;
+      color: var(--color-text);
+      margin-bottom: 8px;
+    }
+    .upsell-renewal {
+      font-size: 0.85rem;
+      color: var(--color-text-light);
+      margin: 20px 0 32px;
+    }
+
+    /* ---- FINAL CTA ---- */
+    .final-cta {
+      background: var(--color-primary);
+      color: var(--color-white);
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .final-cta h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      margin-bottom: 20px;
+    }
+    .final-cta p {
+      font-size: 1.1rem;
+      max-width: 580px;
+      margin: 0 auto 32px;
+      opacity: 0.9;
+      line-height: 1.7;
+    }
+    .btn-white {
+      background: var(--color-white);
+      color: var(--color-primary);
+    }
+    .btn-white:hover { background: #f0f0ec; }
+    .final-fine {
+      font-size: 0.8rem;
+      margin-top: 14px;
+      opacity: 0.7;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      background: var(--color-text);
+      color: rgba(255,255,255,0.6);
+      padding: 48px 24px;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    .footer h4 {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+    }
+    .footer ol {
+      padding-left: 20px;
+    }
+    .footer li { margin-bottom: 4px; }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 600px) {
+      .hero { padding: 120px 20px 60px; }
+      section { padding: 56px 20px; }
+      .card-grid { grid-template-columns: 1fr; }
+      .proof-bar { font-size: 0.8rem; }
+      .proof-bar span { display: block; margin: 4px 0; }
+      .btn { padding: 14px 28px; font-size: 1rem; }
+      .step { gap: 16px; }
+      .upsell-table { font-size: 0.85rem; }
+      .upsell-table th, .upsell-table td { padding: 10px 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">YogaHub</a>
+    <a href="#buy" class="nav-cta">Get the Intro Offer</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="buy">
+    <div class="hero-inner">
+      <h1>2 Weeks Unlimited Yoga, Pilates &amp; Barre — €49</h1>
+      <p>New to YogaHub? Get 14 days of unlimited access across all 8 studios. Yoga. Mat Pilates. Barre. Hot classes. No cap on how many classes you take. Just show up.</p>
+      <a href="#" class="btn">Get My 2 Week Pass — €49</a>
+      <p class="hero-fine">New clients only. Start anytime. Valid for 14 days from purchase.</p>
+    </div>
+  </header>
+
+  <!-- SOCIAL PROOF BAR -->
+  <div class="proof-bar">
+    8 Studios Across Dublin <span>|</span> Hundreds of Classes Every Week <span>|</span> Thousands of Members Strong
+  </div>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="included">
+    <div class="section-inner">
+      <p class="section-label">What's Included</p>
+      <h2 class="section-title">Everything you need to find your practice</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">&#x1F9D8;</div>
+          <h3>Yoga</h3>
+          <p>From slow-flow to power vinyasa. Every level, every mood. Morning calm or evening sweat — your call.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">&#x1F4AA;</div>
+          <h3>Mat Pilates</h3>
+          <p>Core-focused, full-body work. No machines. Just you, the mat, and an instructor who won't let you cheat on form.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">&#x1FA70;</div>
+          <h3>Barre</h3>
+          <p>Low impact. High burn. Barre blends ballet-inspired movements with pilates and strength work. Your legs will thank you (eventually).</p>
+        </div>
+        <div class="card">
+          <div class="card-icon" aria-hidden="true">&#x1F525;</div>
+          <h3>Hot Classes</h3>
+          <p>Turn up the heat. Hot yoga and hot mat-based classes in our heated studios. Walk out feeling wrung out in the best way.</p>
+        </div>
+      </div>
+      <p class="included-note">This intro offer does not include reformer pilates classes.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="steps">
+    <div class="section-inner">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">3 steps. That's it.</h2>
+      <div class="step-list">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Buy your 2 Week Pass</h3>
+            <p>Pick it up right here. Takes 30 seconds. Your 14 days start from the date of purchase.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Book your classes</h3>
+            <p>Browse the timetable and book into any class across all 8 YogaHub studios. No limit on how many you do per day.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Show up and move</h3>
+            <p>Arrive 5 minutes before class. Roll out your mat. Let the instructor take it from there.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY YOGAHUB -->
+  <section class="why">
+    <div class="section-inner">
+      <p class="section-label">Why YogaHub</p>
+      <h2 class="section-title">8 studios. One pass. Zero excuses.</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Convenience that fits your life</h3>
+          <p>With 8 locations across Dublin, there's always a YogaHub near you. Morning, lunch, evening — classes run all day, every day.</p>
+        </div>
+        <div class="why-item">
+          <h3>Variety to keep things interesting</h3>
+          <p>Yoga one day. Barre the next. A hot class on Friday. Mix it up every single day if you want. That's the point.</p>
+        </div>
+        <div class="why-item">
+          <h3>Real instructors who know their stuff</h3>
+          <p>Every class is led by experienced instructors. Not a screen. Not a recording. A real person who adjusts, encourages, and pushes you when you need it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="section-inner">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title">Questions? Sorted.</h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">I've never done yoga / pilates / barre before. Can I still do this?</button>
+          <div class="faq-a"><div class="faq-a-inner">Absolutely. Our classes cater to all levels. Instructors offer modifications so you can go at your own pace. This is exactly how most of our members started.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can I go to any studio?</button>
+          <div class="faq-a"><div class="faq-a-inner">Yes. Your 2 Week Pass is valid at all 8 YogaHub locations. Try a few and find your favourite.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Is there a limit on how many classes I can take?</button>
+          <div class="faq-a"><div class="faq-a-inner">No limit. You can take as many classes per day as you like for the full 14 days.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What's the cancellation policy for classes?</button>
+          <div class="faq-a"><div class="faq-a-inner">You can cancel a booking free of charge up to 6 hours before the class starts. Cancellations within 6 hours incur a €5 fee. Late arrivals are not permitted and may be counted as a late cancellation — so please arrive 5 minutes early.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Does this include reformer pilates?</button>
+          <div class="faq-a"><div class="faq-a-inner">No. The intro offer covers yoga, mat pilates, barre, and hot mat-based classes. Reformer pilates is not included.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">Can I share this with a friend?</button>
+          <div class="faq-a"><div class="faq-a-inner">The pass is non-transferable and non-refundable. But tell your friend to grab their own — it's a proper deal.</div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">What happens after the 2 weeks?</button>
+          <div class="faq-a"><div class="faq-a-inner">No automatic charge. No sneaky renewal. If you love it (and you will), we'll show you our membership options so you can keep going.</div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMBERSHIP UPSELL -->
+  <section class="upsell">
+    <div class="section-inner">
+      <div class="upsell-inner">
+        <p class="section-label">What's Next</p>
+        <h2 class="section-title">Love it? Keep going for less.</h2>
+        <p class="upsell-promo">When your 2 weeks are up, use your exclusive promo code to get <strong>20% off your first two months</strong> of any YogaHub membership.</p>
+        <table class="upsell-table">
+          <thead>
+            <tr>
+              <th>Membership</th>
+              <th>Price</th>
+              <th>Per Class</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>8 Classes / month</td>
+              <td>€99</td>
+              <td>€12.37 / class</td>
+            </tr>
+            <tr>
+              <td>12 Classes / month</td>
+              <td>€139</td>
+              <td>€11.58 / class</td>
+            </tr>
+            <tr>
+              <td>Unlimited</td>
+              <td>€219</td>
+              <td>~€11.52 / class*</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="upsell-note">*Based on average of 19 sessions/month among unlimited members.</p>
+        <p class="upsell-renewal">All memberships renew every 28 days. Cancel anytime after the first payment — just give us 10 days' notice before your next auto-payment.</p>
+        <a href="#buy" class="btn">Get My 2 Week Pass First — €49</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <h2>Your mat is waiting.</h2>
+    <p>14 days. 8 studios. Unlimited classes. €49. No commitment after that. No auto-renewal. Just a proper chance to see if YogaHub is your thing.</p>
+    <a href="#" class="btn btn-white">Get My 2 Week Pass — €49</a>
+    <p class="final-fine">New clients only. Non-transferable. Non-refundable. Valid for 14 days from purchase.</p>
+  </section>
+
+  <!-- FOOTER / T&Cs -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <h4>2 Week Unlimited Intro Offer — Terms &amp; Conditions</h4>
+      <ol>
+        <li>This offer is available to new YogaHub clients only.</li>
+        <li>The pass is non-transferable and non-refundable.</li>
+        <li>Valid at all YogaHub studio locations.</li>
+        <li>Valid for 14 days from the date of purchase.</li>
+        <li>No restrictions on the number of classes taken per day.</li>
+        <li>Includes yoga, mat pilates, barre, and hot mat-based classes.</li>
+        <li>Does not include reformer pilates.</li>
+        <li>Bookings can be cancelled free of charge up to 6 hours before the scheduled class start time.</li>
+        <li>Cancellations made within 6 hours of the class start time will incur a €5 fee.</li>
+        <li>Late arrivals are not permitted and may be counted as a late cancellation. Please arrive 5 minutes ahead of the scheduled start time.</li>
+      </ol>
+    </div>
+  </footer>
+
+  <script>
+    function toggleFaq(btn) {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      // Close all
+      document.querySelectorAll('.faq-q').forEach(q => {
+        q.setAttribute('aria-expanded', 'false');
+        q.parentElement.querySelector('.faq-a').style.maxHeight = null;
+      });
+      // Open clicked if it was closed
+      if (!expanded) {
+        btn.setAttribute('aria-expanded', 'true');
+        const answer = btn.parentElement.querySelector('.faq-a');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    }
+  </script>
+
+</body>
+</html>
