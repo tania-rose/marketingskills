@@ -1,725 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register for the yogahub Intro Offer — Every Studio, One Pass</title>
-  <meta name="description" content="For the first time, one yogahub pass works at every studio. €49 for 14 days of unlimited yoga, mat pilates, barre, and hot classes. Register for early access.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      font-size: 16px;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 400;
-      color: #000000;
-      background: #ffffff;
-      line-height: 1.7;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Layout ── */
-
-    .section {
-      width: 100%;
-      padding: 64px 24px;
-    }
-
-    .section--white { background: #ffffff; }
-    .section--rose  { background: #D8C4C4; }
-    .section--grey  { background: #f0f0f0; }
-
-    .section__inner {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-
-    /* ── Typography ── */
-
-    .micro-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    h1 {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 700;
-      font-size: 2.4rem;
-      line-height: 1.12;
-      letter-spacing: -0.02em;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 700;
-      font-size: 1.8rem;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-
-    h3 {
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-      font-size: 1.1rem;
-      line-height: 1.3;
-      margin-bottom: 8px;
-    }
-
-    p {
-      margin-bottom: 16px;
-    }
-
-    p:last-child {
-      margin-bottom: 0;
-    }
-
-    .subheadline {
-      font-size: 1.05rem;
-      font-weight: 400;
-      line-height: 1.7;
-      max-width: 600px;
-    }
-
-    .rule {
-      border: none;
-      border-top: 1px solid #000000;
-      margin: 32px 0;
-      opacity: 0.15;
-    }
-
-    /* ── Buttons ── */
-
-    .btn {
-      display: inline-block;
-      font-family: 'Quicksand', sans-serif;
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      padding: 16px 40px;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      text-align: center;
-      transition: background 0.2s ease, color 0.2s ease;
-      background: #D8C4C4;
-      color: #000000;
-    }
-
-    .btn:hover {
-      background: #cbb4b4;
-    }
-
-    .btn--full {
-      display: block;
-      width: 100%;
-    }
-
-    /* ── Wave dividers ── */
-
-    .wave-divider {
-      display: block;
-      width: 100%;
-      height: auto;
-      line-height: 0;
-    }
-
-    .wave-divider svg {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    /* wave from white to rose */
-    .wave--white-to-rose { background: #ffffff; }
-    .wave--white-to-rose svg { fill: #D8C4C4; }
-
-    /* wave from rose to white */
-    .wave--rose-to-white { background: #D8C4C4; }
-    .wave--rose-to-white svg { fill: #ffffff; }
-
-    /* wave from white to grey */
-    .wave--white-to-grey { background: #ffffff; }
-    .wave--white-to-grey svg { fill: #f0f0f0; }
-
-    /* wave from grey to white */
-    .wave--grey-to-white { background: #f0f0f0; }
-    .wave--grey-to-white svg { fill: #ffffff; }
-
-    /* wave from rose to grey */
-    .wave--rose-to-grey { background: #D8C4C4; }
-    .wave--rose-to-grey svg { fill: #f0f0f0; }
-
-    /* wave from grey to rose */
-    .wave--grey-to-rose { background: #f0f0f0; }
-    .wave--grey-to-rose svg { fill: #D8C4C4; }
-
-    /* wave from white to white (not used but just in case) */
-    .wave--rose-to-rose { background: #D8C4C4; }
-    .wave--rose-to-rose svg { fill: #D8C4C4; }
-
-    /* ── Hero ── */
-
-    .hero {
-      padding: 80px 24px 64px;
-      text-align: center;
-    }
-
-    .hero .subheadline {
-      margin: 0 auto 32px;
-    }
-
-    .hero .micro-label {
-      margin-bottom: 20px;
-    }
-
-    /* ── Class cards (What's Included) ── */
-
-    .class-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 32px;
-      margin-bottom: 24px;
-    }
-
-    .class-item {
-      border-top: 1px solid rgba(0,0,0,0.12);
-      padding-top: 16px;
-    }
-
-    .class-item h3 {
-      margin-bottom: 6px;
-    }
-
-    .class-item p {
-      font-size: 0.95rem;
-    }
-
-    .note-text {
-      font-size: 0.85rem;
-      font-weight: 500;
-      opacity: 0.7;
-      margin-top: 8px;
-    }
-
-    /* ── Form ── */
-
-    .form-group {
-      margin-bottom: 16px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .form-group input {
-      width: 100%;
-      font-family: 'Quicksand', sans-serif;
-      font-size: 1rem;
-      font-weight: 400;
-      padding: 14px 16px;
-      border: 1px solid #cbb4b4;
-      background: #ffffff;
-      color: #000000;
-      outline: none;
-      transition: border-color 0.2s ease;
-    }
-
-    .form-group input::placeholder {
-      color: #999;
-      font-weight: 300;
-    }
-
-    .form-group input:focus {
-      border-color: #000000;
-    }
-
-    .consent-text {
-      font-size: 0.78rem;
-      font-weight: 400;
-      line-height: 1.6;
-      opacity: 0.6;
-      margin-top: 16px;
-    }
-
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: 32px 0;
-    }
-
-    .form-success p {
-      font-size: 1.05rem;
-      font-weight: 500;
-    }
-
-    /* ── Testimonials ── */
-
-    .testimonial {
-      border-left: 1px solid rgba(0,0,0,0.2);
-      padding-left: 24px;
-      margin-bottom: 32px;
-      font-style: italic;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .testimonial cite {
-      display: block;
-      font-style: normal;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      margin-top: 8px;
-      opacity: 0.7;
-    }
-
-    .stats-line {
-      font-weight: 500;
-      font-size: 0.95rem;
-      opacity: 0.8;
-    }
-
-    /* ── FAQ ── */
-
-    .faq-item {
-      border-top: 1px solid rgba(0,0,0,0.12);
-    }
-
-    .faq-item:last-child {
-      border-bottom: 1px solid rgba(0,0,0,0.12);
-    }
-
-    .faq-question {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      padding: 18px 0;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-family: 'Quicksand', sans-serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #000000;
-      text-align: left;
-      line-height: 1.4;
-    }
-
-    .faq-question:hover {
-      opacity: 0.7;
-    }
-
-    .faq-icon {
-      flex-shrink: 0;
-      margin-left: 16px;
-      font-size: 1.2rem;
-      font-weight: 300;
-      transition: transform 0.2s ease;
-    }
-
-    .faq-item.active .faq-icon {
-      transform: rotate(45deg);
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .faq-answer-inner {
-      padding: 0 0 18px;
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-
-    /* ── Footer ── */
-
-    .footer {
-      padding: 40px 24px;
-      text-align: center;
-      border-top: 1px solid rgba(0,0,0,0.08);
-    }
-
-    .footer p {
-      font-size: 0.85rem;
-      opacity: 0.6;
-    }
-
-    .footer a {
-      color: #000000;
-      font-weight: 600;
-    }
-
-    /* ── Sticky mobile CTA ── */
-
-    .sticky-cta {
-      display: none;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 12px 24px;
-      background: #ffffff;
-      border-top: 1px solid rgba(0,0,0,0.1);
-      z-index: 100;
-    }
-
-    .sticky-cta .btn {
-      width: 100%;
-    }
-
-    /* ── Responsive ── */
-
-    @media (min-width: 768px) {
-      .section {
-        padding: 80px 40px;
-      }
-
-      .hero {
-        padding: 100px 40px 80px;
-      }
-
-      h1 {
-        font-size: 3.2rem;
-      }
-
-      h2 {
-        font-size: 2.2rem;
-      }
-
-      .class-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-      }
-    }
-
-    @media (min-width: 1200px) {
-      h1 {
-        font-size: 3.6rem;
-      }
-
-      .hero {
-        padding: 120px 40px 96px;
-      }
-    }
-
-    @media (max-width: 767px) {
-      .sticky-cta {
-        display: block;
-      }
-
-      /* add bottom padding so sticky CTA doesn't overlap content */
-      body {
-        padding-bottom: 72px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="For the first time, one yogahub pass works at every studio. 14 days of unlimited yoga, mat pilates, barre, and hot classes for just 49 euro. Register for early access.">
+<title>yogahub — Every Studio, One Pass | €49 Intro Offer</title>
+<link rel="icon" href="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/66ab908ee3331573f0a252a3.png">
+<meta property="og:title" content="yogahub — Every Studio, One Pass | €49 Intro Offer">
+<meta property="og:description" content="For the first time, one pass works at every yogahub studio. 14 days unlimited yoga, pilates, barre, and hot classes.">
+<meta property="og:image" content="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/68010f9dfb5b5e6fce463162.jpeg">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="yogahub">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --white:#FFFFFF;--cream:#EFE9EE;--blush:#CEC3C6;--dusty-rose:#D8C4C4;--mauve:#BDB2BD;
+  --line:rgba(189,178,189,0.3);--text:#333333;--muted:#666666;--text-muted:#888888;--border:#F2F2F2;
+  --sans:'Quicksand',sans-serif;--r:22px;--r-sm:10px;--r-btn:25px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--sans);background:var(--white);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+button{font-family:var(--sans);cursor:pointer;border:none;background:none}
+.wrap{max-width:1200px;margin:0 auto;padding:0 2rem}
+a:focus-visible,button:focus-visible{outline:2px solid var(--dusty-rose);outline-offset:2px}
+
+nav{position:fixed;top:1rem;left:50%;transform:translateX(-50%);width:calc(100% - 2.5rem);max-width:1160px;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem 0 1rem;height:56px;background:rgba(255,255,255,0.92);border:1px solid rgba(189,178,189,0.3);border-radius:50px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);transition:box-shadow 0.3s,background 0.3s}
+nav.scrolled{background:rgba(255,255,255,0.96);box-shadow:0 4px 28px rgba(0,0,0,0.07)}
+.nav-logo img{height:20px;display:block}
+.nav-links{list-style:none;display:flex;align-items:center;gap:1.5rem}
+.nav-links a{font-size:0.72rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-btn{font-size:0.72rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;background:var(--dusty-rose);color:var(--white);padding:0.5rem 1.2rem;border-radius:var(--r-btn);border:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.08)}
+.nav-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,0.12)}
+.nav-burger{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer}
+.nav-burger span{display:block;width:20px;height:1.5px;background:var(--muted);border-radius:2px}
+
+.mob-nav{display:none;position:fixed;inset:0;z-index:850;background:var(--white);padding:5.5rem 2rem 2.5rem;flex-direction:column}
+.mob-nav.open{display:flex}
+.mob-nav-close{position:absolute;top:1.1rem;right:1.5rem;font-size:1.5rem;color:var(--muted);cursor:pointer;background:none;border:none}
+.mob-nav a{font-size:1.2rem;font-weight:600;color:var(--text);border-bottom:1px solid var(--line);padding:0.85rem 0;display:block}
+.mob-cta{margin-top:1.75rem;background:var(--dusty-rose);color:var(--white)!important;text-align:center;border-radius:var(--r-btn);padding:0.9rem;font-size:0.85rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;border:none;border-bottom:none!important}
+
+.btn-primary{display:inline-flex;align-items:center;font-family:var(--sans);font-size:0.85rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;background:var(--dusty-rose);color:var(--white);padding:0.9rem 1.9rem;border-radius:var(--r-btn);transition:transform 0.22s,box-shadow 0.22s;cursor:pointer;border:none;box-shadow:0 4px 8px rgba(0,0,0,0.12)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(0,0,0,0.15)}
+.btn-primary:active{transform:scale(0.97)}
+.btn-outline{display:inline-flex;align-items:center;font-family:var(--sans);font-size:0.85rem;font-weight:600;letter-spacing:0.03em;text-transform:uppercase;background:transparent;color:var(--text);padding:0.9rem 1.9rem;border-radius:var(--r-btn);border:2px solid var(--dusty-rose);transition:border-color 0.22s,background 0.22s;cursor:pointer}
+.btn-outline:hover{border-color:var(--blush);background:rgba(216,196,196,0.08)}
+
+.chip{display:inline-flex;align-items:center;font-size:0.6rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:50px;border:1px solid}
+.chip-soft{color:var(--muted);border-color:var(--blush);background:rgba(255,255,255,0.88)}
+
+.hero{padding:7.5rem 0 5rem;background:linear-gradient(170deg,var(--white) 0%,var(--white) 45%,var(--cream) 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-120px;right:-180px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,var(--cream) 0%,transparent 70%);opacity:0.6;pointer-events:none}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.55rem;background:var(--cream);border:1px solid var(--blush);border-radius:50px;padding:0.3rem 0.9rem 0.3rem 0.5rem;font-size:0.65rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:var(--dusty-rose);flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:clamp(2.2rem,4.5vw,2.625rem);font-weight:600;line-height:1.15;color:var(--text);margin-bottom:1.1rem}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--mauve)}
+.hero-sub{font-size:0.97rem;color:var(--muted);line-height:1.7;max-width:420px;margin-bottom:2.2rem}
+.hero-ctas{display:flex;gap:0.85rem;flex-wrap:wrap;margin-bottom:2.2rem}
+.hero-trust{display:flex;gap:1.5rem;flex-wrap:wrap}
+.hero-trust-item{font-size:0.7rem;font-weight:600;color:var(--muted);display:flex;align-items:center;gap:0.4rem}
+.hero-trust-item::before{content:'\2713';width:16px;height:16px;background:var(--cream);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:0.6rem;color:var(--mauve);flex-shrink:0}
+.hero-card{border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:4/5;box-shadow:0 20px 60px rgba(0,0,0,0.09)}
+.hero-stats-badge{position:absolute;bottom:1.2rem;left:1.2rem;right:1.2rem;background:rgba(255,255,255,0.86);backdrop-filter:blur(14px);border-radius:var(--r-sm);padding:0.9rem 1.1rem;display:flex;align-items:center;border:1px solid rgba(255,255,255,0.7)}
+.hbs{flex:1;text-align:center}
+.hbs-n{font-size:1.3rem;font-weight:700;color:var(--text);line-height:1}
+.hbs-l{font-size:0.6rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.18rem}
+.hbs-div{width:1px;background:var(--line);align-self:stretch;margin:0 0.2rem}
+
+.stats-section{padding:2rem 0 3.5rem}
+.stats-bar{background:var(--white);border-radius:var(--r);border:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.stat-item{padding:1.8rem 1.5rem;text-align:center;border-right:1px solid var(--line)}
+.stat-item:last-child{border-right:none}
+.stat-n{font-size:2rem;font-weight:700;color:var(--text);line-height:1;margin-bottom:0.3rem}
+.stat-n em{font-style:italic;font-weight:300;color:var(--dusty-rose);font-size:0.7em}
+.stat-l{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+
+.section-head{margin-bottom:2.5rem}
+.eyebrow{font-size:0.65rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--dusty-rose);margin-bottom:0.5rem}
+.section-head h2{font-size:clamp(1.7rem,3vw,2.25rem);font-weight:600;color:var(--text);line-height:1.2}
+
+.classes-section{padding:0 0 3.75rem}
+.class-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.class-card{background:var(--white);border-radius:var(--r);overflow:hidden;border:1px solid var(--line);transition:transform 0.24s,box-shadow 0.24s;display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.class-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(0,0,0,0.09)}
+.class-img{height:190px;position:relative;overflow:hidden;background:var(--dusty-rose);display:flex;align-items:center;justify-content:center}
+.class-img svg{width:48px;height:48px;stroke:var(--white);opacity:0.5}
+.class-chips{position:absolute;top:0.8rem;left:0.8rem;display:flex;gap:0.35rem;flex-wrap:wrap;z-index:2}
+.class-body{padding:1.3rem;flex:1;display:flex;flex-direction:column}
+.class-title{font-size:0.95rem;font-weight:600;color:var(--text);margin-bottom:0.3rem}
+.class-sub{font-size:0.78rem;color:var(--muted);line-height:1.6;flex:1;margin-bottom:1.1rem}
+.class-footer{display:flex;align-items:center;padding-top:0.9rem;border-top:1px solid var(--line)}
+.class-included{font-size:0.7rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--dusty-rose)}
+.class-note{font-size:0.82rem;color:var(--muted);margin-top:1.2rem;text-align:center}
+
+.why-outer{margin-bottom:3.75rem}
+.why-section{background:var(--white);border-radius:var(--r);border:1px solid var(--line);padding:4rem;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.why-inner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+.why-img{border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;position:relative}
+.why-content h2{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;color:var(--text);line-height:1.2;margin-bottom:2rem}
+.why-points{list-style:none;display:flex;flex-direction:column;gap:1.3rem}
+.why-point{display:flex;gap:0.9rem;align-items:flex-start}
+.why-icon{width:34px;height:34px;border-radius:10px;background:var(--cream);border:1px solid var(--blush);display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;margin-top:0.1rem}
+.why-title{font-size:0.88rem;font-weight:600;color:var(--text);margin-bottom:0.2rem}
+.why-body{font-size:0.82rem;color:var(--muted);line-height:1.65}
+
+.form-section{padding:0 0 3.75rem}
+.form-card{background:var(--cream);border-radius:var(--r);border:1px solid var(--blush);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;min-height:500px}
+.form-text{padding:3.5rem;display:flex;flex-direction:column;justify-content:center}
+.form-text h2{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;color:var(--text);line-height:1.2;margin-bottom:0.9rem}
+.form-text p{font-size:0.9rem;color:var(--muted);line-height:1.7;max-width:360px;margin-bottom:1.5rem}
+.form-text .price-highlight{font-size:1.8rem;font-weight:700;color:var(--text);margin-bottom:0.3rem}
+.form-text .price-sub{font-size:0.82rem;color:var(--muted)}
+.form-embed{padding:1.5rem;display:flex;align-items:center;min-height:450px}
+.form-embed iframe{width:100%;min-height:420px;border:none;border-radius:3px}
+
+.testi-section{padding:0 0 3.75rem}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.testi-card{background:var(--white);border-radius:var(--r);overflow:hidden;border:1px solid var(--line);display:flex;flex-direction:column;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.testi-video-wrap{position:relative;height:210px;overflow:hidden;cursor:pointer;border-radius:var(--r) var(--r) 0 0}
+.testi-video-wrap video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.testi-vid-fade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(255,255,255,0.25) 100%);pointer-events:none}
+.testi-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.9);display:flex;align-items:center;justify-content:center;pointer-events:none;transition:transform 0.2s,background 0.2s;box-shadow:0 2px 12px rgba(0,0,0,0.1)}
+.testi-play svg{width:15px;height:15px;fill:var(--text);margin-left:2px}
+.testi-video-wrap:hover .testi-play{transform:translate(-50%,-50%) scale(1.1);background:var(--white)}
+.testi-card.playing .testi-video-wrap{cursor:default}
+.testi-card.playing video{pointer-events:auto}
+.testi-card.playing .testi-play{display:none}
+.testi-body{padding:1.4rem;flex:1}
+.testi-quote{font-size:0.86rem;font-style:italic;color:var(--text);line-height:1.78;margin-bottom:1.1rem}
+.testi-attr{display:flex;align-items:center;gap:0.7rem}
+.testi-avatar{width:32px;height:32px;border-radius:50%;background:var(--cream);border:1px solid var(--blush);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:600;color:var(--muted)}
+.testi-name{font-size:0.78rem;font-weight:600;color:var(--text)}
+.testi-role{font-size:0.68rem;color:var(--muted)}
+
+.reviews-section{padding:0 0 3.75rem}
+.reviews-wrap{background:var(--white);border-radius:var(--r);border:1px solid var(--line);padding:1.5rem;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+
+.faq-section{padding:0 0 3.75rem}
+.faq-card{background:var(--white);border-radius:var(--r);border:1px solid var(--line);padding:2.5rem;box-shadow:0 2px 12px rgba(0,0,0,0.04)}
+.faq-item{border-top:1px solid var(--line)}
+.faq-item:last-child{border-bottom:1px solid var(--line)}
+.faq-question{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1.1rem 0;background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:0.92rem;font-weight:600;color:var(--text);text-align:left;line-height:1.4}
+.faq-question:hover{opacity:0.7}
+.faq-icon{flex-shrink:0;margin-left:16px;font-size:1.2rem;font-weight:300;transition:transform 0.2s}
+.faq-item.active .faq-icon{transform:rotate(45deg)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.3s ease}
+.faq-answer-inner{padding:0 0 1.1rem;font-size:0.85rem;color:var(--muted);line-height:1.7}
+
+.cta-section{padding:0 0 3.75rem}
+.cta-card{background:var(--cream);border-radius:var(--r);border:1px solid var(--blush);display:grid;grid-template-columns:1fr 380px;overflow:hidden;min-height:300px}
+.cta-text{padding:3.5rem;display:flex;flex-direction:column;justify-content:center}
+.cta-text h2{font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;color:var(--text);line-height:1.2;margin-bottom:0.9rem}
+.cta-text p{font-size:0.9rem;color:var(--muted);line-height:1.7;max-width:360px;margin-bottom:2rem}
+.cta-img{position:relative;overflow:hidden}
+.cta-img-fade{position:absolute;inset:0;background:linear-gradient(to right,var(--cream) 0%,transparent 45%);z-index:1;pointer-events:none}
+
+footer{background:var(--cream);border-radius:var(--r) var(--r) 0 0;overflow:hidden}
+.footer-inner{max-width:1200px;margin:0 auto;padding:3.5rem 2rem 2rem}
+.footer-grid{display:grid;grid-template-columns:1fr auto;gap:3rem;padding-bottom:2rem;margin-bottom:2rem;border-bottom:1px solid var(--blush)}
+.f-logo{margin-bottom:1rem}
+.f-logo img{height:18px;opacity:0.85}
+.f-address{font-size:0.78rem;line-height:1.9;color:var(--muted);font-style:normal}
+.f-address a{color:var(--text);text-decoration:underline;transition:color 0.2s}
+.f-links{list-style:none;display:flex;flex-direction:column;gap:0.65rem;align-items:flex-end}
+.f-links a{font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:600;color:var(--text);text-decoration:underline;transition:color 0.2s}
+.f-copy{font-size:0.66rem;color:var(--text-muted)}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity 0.52s,transform 0.52s}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:0.08s}.d2{transition-delay:0.16s}.d3{transition-delay:0.24s}.d4{transition-delay:0.32s}
+
+@media(max-width:1020px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}.hero-card{max-width:440px;margin:0 auto}
+  .class-grid{grid-template-columns:repeat(2,1fr)}
+  .why-inner{grid-template-columns:1fr}.why-img{max-width:460px}
+  .why-section{padding:2.5rem 2rem}
+  .cta-card{grid-template-columns:1fr}.cta-img{display:none}
+  .form-card{grid-template-columns:1fr}
+  .form-embed{min-height:400px}
+  .testi-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:700px){
+  .class-grid{grid-template-columns:1fr}.testi-grid{grid-template-columns:1fr}
+  .stats-bar{grid-template-columns:repeat(2,1fr)}
+  .stat-item:nth-child(2){border-right:none}
+  .stat-item:nth-child(3){border-top:1px solid var(--line);border-right:1px solid var(--line)}
+  .footer-grid{grid-template-columns:1fr;gap:1.75rem}.f-links{align-items:flex-start}
+}
+@media(max-width:600px){
+  nav{width:calc(100% - 1.5rem);padding:0 0.9rem 0 0.8rem}
+  .nav-links{display:none}.nav-burger{display:flex}
+  .wrap{padding:0 1.25rem}
+  .hero{padding:7rem 0 3.5rem}
+  .hero h1{font-size:1.75rem}
+  .section-head h2{font-size:1.5rem}
+  .hero-ctas{flex-direction:column}
+  .hero-ctas .btn-primary,.hero-ctas .btn-outline{justify-content:center}
+  .why-section{padding:2rem 1.5rem}
+  .form-card{min-height:auto}
+  .form-text{padding:2rem 1.5rem}
+  .faq-card{padding:1.5rem}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .hero-dot{animation:none}
+}
+</style>
 </head>
 <body>
+<div class="mob-nav" id="mobNav">
+  <button class="mob-nav-close" onclick="document.getElementById('mobNav').classList.remove('open')">&#x00D7;</button>
+  <a href="https://yogahub.ie/classes">Classes</a>
+  <a href="https://yogahub.ie/timetable">Timetable</a>
+  <a href="https://yogahub.ie/studios">Studios</a>
+  <a href="https://yogahub.ie/membership">Membership</a>
+  <a href="#register" class="mob-cta" onclick="document.getElementById('mobNav').classList.remove('open')">Register for Early Access</a>
+</div>
+<nav id="siteNav">
+  <a href="https://yogahub.ie" class="nav-logo">
+    <img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/66ab913a3ae93786069c636d.png" alt="yogahub" style="height:20px">
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://yogahub.ie/classes">Classes</a></li>
+    <li><a href="https://yogahub.ie/timetable">Timetable</a></li>
+    <li><a href="https://yogahub.ie/studios">Studios</a></li>
+    <li><a href="https://yogahub.ie/membership">Membership</a></li>
+    <li><a href="#register" class="nav-btn">Register for Early Access</a></li>
+  </ul>
+  <button class="nav-burger" onclick="document.getElementById('mobNav').classList.add('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<main id="main">
 
-  <!-- ════════════ HERO ════════════ -->
-  <section class="hero section section--white">
-    <div class="section__inner">
-      <p class="micro-label">New at yogahub</p>
-      <h1>One pass. Every studio.<br>For the first time ever.</h1>
-      <p class="subheadline">We are changing how yogahub works. No more choosing one studio. No more limits. For &euro;49, get 14 days of unlimited access to every class at every yogahub location. Yoga. Mat pilates. Barre. Hot classes. All of it.</p>
-      <p class="subheadline" style="margin-bottom: 36px;">This is the first time we have done this. Register now to be the first to know when it goes live.</p>
-      <a href="#register" class="btn">Register for Early Access</a>
-    </div>
-  </section>
-
-  <!-- wave: white → rose -->
-  <div class="wave-divider wave--white-to-rose">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
-    </svg>
-  </div>
-
-  <!-- ════════════ WHAT'S CHANGING ════════════ -->
-  <section class="section section--rose">
-    <div class="section__inner">
-      <h2>This is a big one.</h2>
-      <p>Until now, yogahub passes were tied to a single studio. That meant choosing one location and sticking with it.</p>
-      <p>Not any more.</p>
-      <p>Our new 2 Week Unlimited Intro Offer gives you access to <strong>every yogahub studio</strong> with a single pass. Try a vinyasa in Ranelagh on Monday. Mat pilates in Rathmines on Wednesday. A hot class in Camden on Friday. Your call.</p>
-      <p><strong>&euro;49. 14 days. Every studio. No restrictions on how many classes you take.</strong></p>
-    </div>
-  </section>
-
-  <!-- wave: rose → white -->
-  <div class="wave-divider wave--rose-to-white">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C360,0 720,80 1080,20 C1260,0 1380,30 1440,40 L1440,80 L0,80 Z"/>
-    </svg>
-  </div>
-
-  <!-- ════════════ WHAT'S INCLUDED ════════════ -->
-  <section class="section section--white">
-    <div class="section__inner">
-      <h2>What's included</h2>
-      <div class="class-grid">
-        <div class="class-item">
-          <h3>Yoga</h3>
-          <p>From slow flow to power vinyasa. Every level, every mood. Morning calm or evening movement.</p>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="rv">
+        <div class="hero-eyebrow"><span class="hero-dot"></span>New at yogahub</div>
+        <h1>One pass. Every studio.<br><em>For the first time ever.</em></h1>
+        <p class="hero-sub">We are changing how yogahub works. No more single-studio passes. For &euro;49, get 14 days of unlimited access to every class at every location. Yoga. Mat pilates. Barre. Hot classes. All of it.</p>
+        <div class="hero-ctas">
+          <a href="#register" class="btn-primary">Register for Early Access</a>
+          <a href="#included" class="btn-outline">See What's Included</a>
         </div>
-        <div class="class-item">
-          <h3>Mat Pilates</h3>
-          <p>Core-focused, full-body work. You, the mat, and an instructor who knows their craft.</p>
-        </div>
-        <div class="class-item">
-          <h3>Barre</h3>
-          <p>Low impact, high intensity. Ballet-inspired movements blended with pilates and strength work.</p>
-        </div>
-        <div class="class-item">
-          <h3>Hot Classes</h3>
-          <p>Heated studios. Hot yoga and hot mat-based classes. Walk out feeling completely renewed.</p>
+        <div class="hero-trust">
+          <span class="hero-trust-item">All Studios Included</span>
+          <span class="hero-trust-item">No Single-Studio Restrictions</span>
+          <span class="hero-trust-item">14 Days Unlimited</span>
         </div>
       </div>
-      <p class="note-text">Does not include reformer pilates. Reformer pilates requires a separate membership.</p>
-    </div>
-  </section>
-
-  <!-- wave: white → rose -->
-  <div class="wave-divider wave--white-to-rose">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,20 C180,60 360,0 540,40 C720,80 900,10 1080,40 C1260,70 1380,20 1440,30 L1440,80 L0,80 Z"/>
-    </svg>
-  </div>
-
-  <!-- ════════════ OPT-IN FORM ════════════ -->
-  <section class="section section--rose" id="register">
-    <div class="section__inner">
-      <h2>Be the first to get access.</h2>
-
-      <form id="optinForm" novalidate>
-        <div class="form-group">
-          <label for="firstName">First Name</label>
-          <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" placeholder="Your email address" required>
-        </div>
-        <div class="form-group">
-          <label for="whatsapp">WhatsApp Number</label>
-          <input type="tel" id="whatsapp" name="whatsapp" placeholder="Your WhatsApp number (e.g. +353 87 123 4567)" required>
-        </div>
-        <button type="submit" class="btn btn--full" style="margin-top: 8px;">Register Now</button>
-        <p class="consent-text">By registering, you agree to receive updates about the yogahub intro offer via email and WhatsApp. You can unsubscribe at any time. We will never share your details.</p>
-      </form>
-
-      <div class="form-success" id="formSuccess">
-        <p>You are registered. We will send you a message the moment the offer goes live. Keep an eye on your inbox and WhatsApp.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- wave: rose → white -->
-  <div class="wave-divider wave--rose-to-white">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,30 C240,70 480,0 720,50 C960,80 1200,10 1440,40 L1440,80 L0,80 Z"/>
-    </svg>
-  </div>
-
-  <!-- ════════════ SOCIAL PROOF ════════════ -->
-  <section class="section section--white">
-    <div class="section__inner">
-      <h2>Why people are excited about this.</h2>
-
-      <div class="testimonial">
-        <p>"I've been going to the Rathmines studio for a year but always wanted to try Camden's hot classes. This is exactly what I needed."</p>
-        <cite>yogahub member</cite>
-      </div>
-
-      <div class="testimonial">
-        <p>"One pass for every studio is a game-changer. About time."</p>
-        <cite>yogahub member</cite>
-      </div>
-
-      <hr class="rule">
-
-      <p class="stats-line">Multiple studios across Dublin and Sligo. Hundreds of classes every week. Thousands of members strong.</p>
-    </div>
-  </section>
-
-  <!-- wave: white → grey -->
-  <div class="wave-divider wave--white-to-grey">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,50 C320,10 640,70 960,30 C1120,10 1300,60 1440,40 L1440,80 L0,80 Z"/>
-    </svg>
-  </div>
-
-  <!-- ════════════ FAQ ════════════ -->
-  <section class="section section--grey">
-    <div class="section__inner">
-      <h2>A few questions you might have.</h2>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>When does the offer go live?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Soon. Register above and you will be the first to know. We will notify you via email and WhatsApp.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>How much is it?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            &euro;49 for 14 days of unlimited access across every yogahub studio.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Can I really go to any studio?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Yes. Every single one. That is the whole point.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>What classes are included?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Yoga, mat pilates, barre, and hot mat-based classes. Reformer pilates is not included.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>Is this only for new clients?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Yes. The intro offer is for new yogahub clients only.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          <span>What happens after the 2 weeks?</span>
-          <span class="faq-icon">+</span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Nothing automatic. No surprise charges. Your pass simply expires. If you want to continue, we have membership options starting from &euro;99/month.
-          </div>
+      <div class="hero-card rv d2">
+        <img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/68010f9dfb5b5e6fce463162.jpeg" alt="yogahub studio class in session" style="width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0">
+        <div class="hero-stats-badge">
+          <div class="hbs"><div class="hbs-n">&euro;49</div><div class="hbs-l">Intro Price</div></div>
+          <div class="hbs-div"></div>
+          <div class="hbs"><div class="hbs-n">14</div><div class="hbs-l">Days</div></div>
+          <div class="hbs-div"></div>
+          <div class="hbs"><div class="hbs-n">All</div><div class="hbs-l">Studios</div></div>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- wave: grey → white -->
-  <div class="wave-divider wave--grey-to-white">
-    <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z"/>
-    </svg>
   </div>
+</section>
 
-  <!-- ════════════ FOOTER ════════════ -->
-  <footer class="footer">
-    <p>yogahub &mdash; yoga, pilates, barre, and hot classes across Dublin and Sligo.</p>
-    <p style="margin-top: 8px;">Questions? Visit <a href="https://yogahub.ie">yogahub.ie</a> or contact your local studio.</p>
-  </footer>
-
-  <!-- ════════════ STICKY MOBILE CTA ════════════ -->
-  <div class="sticky-cta" id="stickyCta">
-    <a href="#register" class="btn">Register for Early Access</a>
+<div class="wrap stats-section">
+  <div class="stats-bar rv">
+    <div class="stat-item"><div class="stat-n">&euro;49</div><div class="stat-l">Intro Price</div></div>
+    <div class="stat-item"><div class="stat-n">14</div><div class="stat-l">Days Unlimited</div></div>
+    <div class="stat-item"><div class="stat-n">All</div><div class="stat-l">Studios Included</div></div>
+    <div class="stat-item"><div class="stat-n">4</div><div class="stat-l">Class Types</div></div>
   </div>
+</div>
 
-  <script>
-    /* ── FAQ accordion ── */
-    document.querySelectorAll('.faq-question').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var item = this.parentElement;
-        var answer = item.querySelector('.faq-answer');
-        var isActive = item.classList.contains('active');
+<section class="classes-section" id="included">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">What's Included</span>
+      <h2>Everything you need to find your practice</h2>
+    </div>
+    <div class="class-grid">
+      <div class="class-card rv">
+        <div class="class-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          <div class="class-chips"><span class="chip chip-soft">All Levels</span></div>
+        </div>
+        <div class="class-body">
+          <div class="class-title">Yoga</div>
+          <div class="class-sub">From slow flow to power vinyasa. Every level, every mood. Morning calm or evening movement.</div>
+          <div class="class-footer"><span class="class-included">&#x2713; Included</span></div>
+        </div>
+      </div>
+      <div class="class-card rv d1">
+        <div class="class-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+          <div class="class-chips"><span class="chip chip-soft">All Levels</span></div>
+        </div>
+        <div class="class-body">
+          <div class="class-title">Mat Pilates</div>
+          <div class="class-sub">Core-focused, full-body work. You, the mat, and an instructor who knows their craft.</div>
+          <div class="class-footer"><span class="class-included">&#x2713; Included</span></div>
+        </div>
+      </div>
+      <div class="class-card rv d2">
+        <div class="class-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"/></svg>
+          <div class="class-chips"><span class="chip chip-soft">All Levels</span></div>
+        </div>
+        <div class="class-body">
+          <div class="class-title">Barre</div>
+          <div class="class-sub">Low impact, high intensity. Ballet-inspired movements blended with pilates and strength work.</div>
+          <div class="class-footer"><span class="class-included">&#x2713; Included</span></div>
+        </div>
+      </div>
+      <div class="class-card rv d3">
+        <div class="class-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"/><path d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1.001A3.75 3.75 0 0012 18z"/></svg>
+          <div class="class-chips"><span class="chip chip-soft">Heated</span></div>
+        </div>
+        <div class="class-body">
+          <div class="class-title">Hot Classes</div>
+          <div class="class-sub">Heated studios. Hot yoga and hot mat-based classes. Walk out feeling completely renewed.</div>
+          <div class="class-footer"><span class="class-included">&#x2713; Included</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="class-note rv">Does not include reformer pilates. Reformer pilates requires a separate membership.</p>
+  </div>
+</section>
 
-        // close all
-        document.querySelectorAll('.faq-item').forEach(function(el) {
-          el.classList.remove('active');
-          el.querySelector('.faq-answer').style.maxHeight = null;
-          el.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
-        });
+<div class="wrap why-outer">
+  <div class="why-section">
+    <div class="why-inner">
+      <div class="why-img rv">
+        <img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/68010f9dfb5b5eaed8463160.jpeg" alt="yogahub studio community" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+      </div>
+      <div class="rv d1">
+        <span class="eyebrow">What's Changed</span>
+        <h2 style="font-size:clamp(1.6rem,2.6vw,2.2rem);font-weight:600;color:var(--text);line-height:1.2;margin-bottom:2rem">No more single-studio passes. <em style="font-weight:400;color:var(--mauve)">This changes everything.</em></h2>
+        <ul class="why-points">
+          <li class="why-point">
+            <div class="why-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 0h.008v.008h-.008V7.5z"/></svg></div>
+            <div><div class="why-title">Every studio, one pass</div><div class="why-body">Until now, passes were tied to a single location. The new intro offer opens the doors to every yogahub studio with a single purchase. Try Ranelagh on Monday, Camden on Wednesday, Rathmines on Friday.</div></div>
+          </li>
+          <li class="why-point">
+            <div class="why-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+            <div><div class="why-title">No restrictions</div><div class="why-body">Take as many classes as you want per day. Yoga in the morning, barre at lunch, a hot class in the evening. No caps, no limits for 14 full days.</div></div>
+          </li>
+          <li class="why-point">
+            <div class="why-icon"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg></div>
+            <div><div class="why-title">Your schedule, your choice</div><div class="why-body">With multiple locations across Dublin and Sligo, there is always a yogahub near wherever you are. Morning, lunch, evening. Classes run all day, every day.</div></div>
+          </li>
+        </ul>
+        <div style="margin-top:2rem"><a href="#register" class="btn-primary">Register for Early Access</a></div>
+      </div>
+    </div>
+  </div>
+</div>
 
-        // open clicked (if it was closed)
-        if (!isActive) {
-          item.classList.add('active');
-          answer.style.maxHeight = answer.scrollHeight + 'px';
-          this.setAttribute('aria-expanded', 'true');
-        }
-      });
-    });
+<section class="form-section" id="register">
+  <div class="wrap">
+    <div class="form-card rv">
+      <div class="form-text">
+        <span class="eyebrow">Early Access</span>
+        <h2>Be the first to get access.</h2>
+        <p>Register now and we will send you a message the moment the offer goes live. This is the first time we have done this.</p>
+        <div class="price-highlight">&euro;49</div>
+        <p class="price-sub">14 days. Every studio. Unlimited classes.</p>
+      </div>
+      <div class="form-embed">
+        <iframe
+          src="https://link.theyogahub.ie/widget/form/cW8w1rNzFJ104GHjh0GK"
+          style="width:100%;height:100%;border:none;border-radius:3px"
+          id="inline-cW8w1rNzFJ104GHjh0GK"
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="1. Intro Offer Opt in - Mat Classes Facebook ads "
+          data-height="undefined"
+          data-layout-iframe-id="inline-cW8w1rNzFJ104GHjh0GK"
+          data-form-id="cW8w1rNzFJ104GHjh0GK"
+          title="1. Intro Offer Opt in - Mat Classes Facebook ads "
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://link.theyogahub.ie/js/form_embed.js"></script>
 
-    /* ── Form submit (inline confirmation) ── */
-    document.getElementById('optinForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // In production, replace with actual form submission (e.g. fetch to API)
-      this.style.display = 'none';
-      document.getElementById('formSuccess').style.display = 'block';
-    });
+<section class="testi-section">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Community</span>
+      <h2>Hear from our members</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card rv">
+        <div class="testi-video-wrap" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/68023b8d29d629c1a8324073.mp4" playsinline preload="metadata"></video>
+          <div class="testi-vid-fade"></div>
+          <div class="testi-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="testi-body">
+          <p class="testi-quote">&#x201C;I was teaching three classes a week at Camden six months after qualifying. The training does not just give you a certificate.&#x201D;</p>
+          <div class="testi-attr"><div class="testi-avatar">N</div><div><div class="testi-name">Nathan O&#x2019;Brien</div><div class="testi-role">yogahub Member</div></div></div>
+        </div>
+      </div>
+      <div class="testi-card rv d1">
+        <div class="testi-video-wrap" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/68023b8c8970b0b434f1558e.mp4" playsinline preload="metadata"></video>
+          <div class="testi-vid-fade"></div>
+          <div class="testi-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="testi-body">
+          <p class="testi-quote">&#x201C;The weekend format meant I could keep my job and still complete the full programme. I never felt like I was sacrificing one for the other.&#x201D;</p>
+          <div class="testi-attr"><div class="testi-avatar">S</div><div><div class="testi-name">Suzanne</div><div class="testi-role">yogahub Member</div></div></div>
+        </div>
+      </div>
+      <div class="testi-card rv d2">
+        <div class="testi-video-wrap" onclick="playVid(this)">
+          <video src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/673589ae916fa936a7d149a2.mp4" playsinline preload="metadata"></video>
+          <div class="testi-vid-fade"></div>
+          <div class="testi-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="testi-body">
+          <p class="testi-quote">&#x201C;Training inside a real studio, with real students from early on, is what set this apart. You graduate ready to teach, not just ready to practise.&#x201D;</p>
+          <div class="testi-attr"><div class="testi-avatar">C</div><div><div class="testi-name">Caoimhe</div><div class="testi-role">yogahub Member</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    /* ── Hide sticky CTA when form section is in view ── */
-    (function() {
-      var stickyCta = document.getElementById('stickyCta');
-      var registerSection = document.getElementById('register');
+<section class="reviews-section">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Verified Google Reviews</span>
+      <h2>3,000+ happy members. One thing in common.</h2>
+    </div>
+    <div class="reviews-wrap rv d1">
+      <script type='text/javascript' src='https://link.theyogahub.ie/reputation/assets/review-widget.js'></script>
+      <iframe class='lc_reviews_widget' src='https://link.theyogahub.ie/reputation/widgets/review_widget/bjJdAOxqv6qUquOelvPN' frameborder='0' scrolling='no' title="yogahub Google Reviews" style='min-width:100%;width:100%;border:none;display:block' loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
 
-      if (!stickyCta || !registerSection || window.innerWidth >= 768) return;
+<section class="faq-section">
+  <div class="wrap">
+    <div class="section-head rv">
+      <span class="eyebrow">Questions</span>
+      <h2>A few questions you might have</h2>
+    </div>
+    <div class="faq-card rv d1">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>When does the offer go live?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Soon. Register above and you will be the first to know. We will notify you via email and WhatsApp.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>How much is it?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">&euro;49 for 14 days of unlimited access across every yogahub studio.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Can I really go to any studio?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Every single one. That is the whole point.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What classes are included?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yoga, mat pilates, barre, and hot mat-based classes. Reformer pilates is not included.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>Is this only for new clients?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. The intro offer is for new yogahub clients only.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false"><span>What happens after the 2 weeks?</span><span class="faq-icon">+</span></button>
+        <div class="faq-answer"><div class="faq-answer-inner">Nothing automatic. No surprise charges. Your pass simply expires. If you want to continue, we have membership options starting from &euro;99 every 28 days.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          stickyCta.style.opacity = entry.isIntersecting ? '0' : '1';
-          stickyCta.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
-        });
-      }, { threshold: 0.2 });
+<section class="cta-section">
+  <div class="wrap">
+    <div class="cta-card rv">
+      <div class="cta-text">
+        <span class="eyebrow">Don't miss out</span>
+        <h2>Your mat is waiting at every studio.</h2>
+        <p>This is the first time yogahub has offered a single pass that works everywhere. Register now and be the first to know when it goes live.</p>
+        <a href="#register" class="btn-primary" style="align-self:flex-start">Register for Early Access</a>
+      </div>
+      <div class="cta-img">
+        <img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/68010f9d17a686c3791d0eda.jpeg" alt="yogahub studio" style="width:100%;height:100%;object-fit:cover;display:block;min-height:300px" loading="lazy">
+        <div class="cta-img-fade"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-      observer.observe(registerSection);
+</main>
 
-      stickyCta.style.transition = 'opacity 0.3s ease';
-    })();
-  </script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="f-logo"><img src="https://assets.cdn.filesafe.space/HLCTc8QkHltQ3ScL9MN1/media/66ab913a3ae93786069c636d.png" alt="yogahub" loading="lazy"></div>
+        <address class="f-address" style="font-style:normal">
+          Multiple locations across Dublin and Sligo<br>
+          <a href="https://yogahub.ie">yogahub.ie</a>
+        </address>
+      </div>
+      <ul class="f-links">
+        <li><a href="https://yogahub.ie/classes">Classes</a></li>
+        <li><a href="https://yogahub.ie/timetable">Timetable</a></li>
+        <li><a href="https://yogahub.ie/studios">Studios</a></li>
+        <li><a href="https://yogahub.ie/membership">Membership</a></li>
+        <li><a href="https://yogahub.ie/contact">Contact</a></li>
+      </ul>
+    </div>
+    <p class="f-copy">&copy; 2026 yogahub. All rights reserved.</p>
+  </div>
+</footer>
 
+<script>
+function playVid(wrap){
+  const card=wrap.closest('.testi-card'),video=wrap.querySelector('video');
+  document.querySelectorAll('.testi-card.playing').forEach(c=>{
+    if(c!==card){c.classList.remove('playing');const v=c.querySelector('video');v.pause();v.removeAttribute('controls');}
+  });
+  card.classList.add('playing');video.setAttribute('controls','');video.play();
+}
+const ro=new IntersectionObserver(entries=>entries.forEach(e=>{
+  if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}
+}),{threshold:0.07});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+const nav=document.getElementById('siteNav');
+window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',window.scrollY>40);},{passive:true});
+document.querySelectorAll('.faq-question').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.parentElement;var answer=item.querySelector('.faq-answer');var isActive=item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(function(el){el.classList.remove('active');el.querySelector('.faq-answer').style.maxHeight=null;el.querySelector('.faq-question').setAttribute('aria-expanded','false');});
+    if(!isActive){item.classList.add('active');answer.style.maxHeight=answer.scrollHeight+'px';this.setAttribute('aria-expanded','true');}
+  });
+});
+</script>
 </body>
 </html>
