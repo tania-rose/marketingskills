@@ -1,3 +1,10 @@
+---
+name: display-captions
+description: Displaying and styling captions in Remotion with TikTok-style pages and word highlighting
+metadata:
+  tags: captions, subtitles, display, tiktok, highlight
+---
+
 # Displaying captions in Remotion
 
 This guide explains how to display captions in Remotion, assuming you already have captions in the [`Caption`](https://www.remotion.dev/docs/captions/caption) format.

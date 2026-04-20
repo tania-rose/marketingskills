@@ -1,6 +1,6 @@
 ---
-name: remotion-best-practices
-description: Best practices for Remotion - Video creation in React
+name: remotion
+description: Best practices for Remotion - Video creation in React. Use when the user says "Remotion," "programmatic video," "React video," "code-based video," or wants to create videos with code.
 metadata:
   tags: remotion, video, react, animation, composition
 ---
@@ -23,7 +23,7 @@ When needing to visualize audio (spectrum bars, waveforms, bass-reactive effects
 
 ## Sound effects
 
-When needing to use sound effects, load the [./rules/sound-effects.md](./rules/sound-effects.md) file for more information.
+When needing to use sound effects, load the [./rules/sfx.md](./rules/sfx.md) file for more information.
 
 ## How to use
 
@@ -59,3 +59,7 @@ Read individual rule files for detailed explanations and code examples:
 - [rules/parameters.md](rules/parameters.md) - Make a video parametrizable by adding a Zod schema
 - [rules/maps.md](rules/maps.md) - Add a map using Mapbox and animate it
 - [rules/voiceover.md](rules/voiceover.md) - Adding AI-generated voiceover to Remotion compositions using ElevenLabs TTS
+- [rules/display-captions.md](rules/display-captions.md) - Displaying and styling captions with TikTok-style pages and word highlighting
+- [rules/import-srt-captions.md](rules/import-srt-captions.md) - Importing .srt subtitle files into Remotion
+- [rules/transcribe-captions.md](rules/transcribe-captions.md) - Transcribing audio to generate captions using Whisper
+- [rules/sfx.md](rules/sfx.md) - Including sound effects in Remotion

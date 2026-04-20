@@ -1,5 +1,3 @@
-# Importing .srt Subtitles into Remotion
-
 ---
 name: import-srt-captions
 description: Importing .srt subtitle files into Remotion using @remotion/captions
