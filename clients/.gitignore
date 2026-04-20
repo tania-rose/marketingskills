@@ -1,0 +1,13 @@
+# Ignore actual env files (secrets)
+**/.env
+
+# Keep example templates
+!**/.env.example
+
+# Ignore generated reports (large, ephemeral)
+**/reports/*-prompt.md
+**/logs/
+
+# Keep directory structure
+!.gitignore
+!.gitkeep

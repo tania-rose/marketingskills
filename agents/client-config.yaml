@@ -1,0 +1,231 @@
+# Client Configuration Template
+# Copy this file to clients/{client-name}/config.yaml and fill in details
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CLIENT IDENTITY
+# ─────────────────────────────────────────────────────────────────────────────
+client:
+  name: "Acme SaaS"
+  slug: "acme-saas"                    # lowercase, used for directory names
+  url: "https://acme.com"
+  industry: "B2B SaaS"
+  stage: "growth"                      # startup | growth | scale | enterprise
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TOOL INTEGRATIONS (API keys via env vars — never hardcode)
+# ─────────────────────────────────────────────────────────────────────────────
+integrations:
+  analytics:
+    ga4:
+      property_id: ""
+      api_key_env: "ACME_GA4_KEY"
+    mixpanel:
+      project_id: ""
+      api_key_env: "ACME_MIXPANEL_KEY"
+
+  email:
+    provider: "customer-io"            # customer-io | mailchimp | resend | sendgrid | kit
+    api_key_env: "ACME_EMAIL_KEY"
+    workspace_id: ""
+
+  crm:
+    provider: "hubspot"                # hubspot | salesforce | close
+    api_key_env: "ACME_CRM_KEY"
+
+  ads:
+    google_ads:
+      customer_id: ""
+      api_key_env: "ACME_GADS_KEY"
+    meta_ads:
+      account_id: ""
+      api_key_env: "ACME_META_KEY"
+
+  payments:
+    provider: "stripe"                 # stripe | paddle
+    api_key_env: "ACME_STRIPE_KEY"
+
+  seo:
+    provider: "ahrefs"                 # ahrefs | semrush | dataforseo
+    api_key_env: "ACME_SEO_KEY"
+    gsc_property: ""
+
+  social:
+    buffer_api_key_env: "ACME_BUFFER_KEY"
+
+  referral:
+    provider: "rewardful"              # rewardful | tolt | partnerstack
+    api_key_env: "ACME_REFERRAL_KEY"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ACTIVE AGENTS — which agent types run for this client
+# ─────────────────────────────────────────────────────────────────────────────
+agents:
+  seo:
+    enabled: true
+    schedule: "weekly"                 # daily | weekly | biweekly | monthly
+    day: "monday"
+    skills:
+      - seo-audit
+      - ai-seo
+      - schema-markup
+      - content-strategy
+    focus_pages:
+      - "/"
+      - "/pricing"
+      - "/features"
+    notify: ["slack", "email"]
+
+  cro:
+    enabled: true
+    schedule: "biweekly"
+    skills:
+      - page-cro
+      - signup-flow-cro
+      - form-cro
+      - popup-cro
+      - onboarding-cro
+    focus_pages:
+      - "/pricing"
+      - "/signup"
+      - "/onboarding"
+    notify: ["slack"]
+
+  content:
+    enabled: true
+    schedule: "daily"
+    skills:
+      - copywriting
+      - email-sequence
+      - social-content
+    channels:
+      - linkedin
+      - twitter
+      - email
+    notify: ["slack"]
+
+  growth:
+    enabled: true
+    schedule: "weekly"
+    day: "wednesday"
+    skills:
+      - paid-ads
+      - ad-creative
+      - referral-program
+      - launch-strategy
+    budget_monthly: 5000
+    notify: ["email"]
+
+  revenue:
+    enabled: true
+    schedule: "monthly"
+    day: 1
+    skills:
+      - pricing-strategy
+      - churn-prevention
+      - revops
+      - analytics-tracking
+    notify: ["email", "slack"]
+
+  strategy:
+    enabled: false
+    schedule: "on-demand"
+    skills:
+      - marketing-ideas
+      - marketing-psychology
+      - competitor-alternatives
+      - ab-test-setup
+
+# ─────────────────────────────────────────────────────────────────────────────
+# WORKFLOWS — multi-step skill chains triggered by agents
+# ─────────────────────────────────────────────────────────────────────────────
+workflows:
+  weekly-growth-report:
+    trigger: "schedule"
+    agent: "growth"
+    steps:
+      - skill: analytics-tracking
+        action: "pull-metrics"
+        params:
+          period: "7d"
+      - skill: paid-ads
+        action: "review-performance"
+      - skill: page-cro
+        action: "identify-drops"
+        params:
+          threshold: "10%"
+      - skill: marketing-ideas
+        action: "suggest-improvements"
+    output: "reports/weekly-growth-{date}.md"
+
+  monthly-seo-audit:
+    trigger: "schedule"
+    agent: "seo"
+    steps:
+      - skill: seo-audit
+        action: "full-audit"
+      - skill: ai-seo
+        action: "check-ai-visibility"
+      - skill: schema-markup
+        action: "validate"
+      - skill: content-strategy
+        action: "gap-analysis"
+    output: "reports/seo-audit-{date}.md"
+
+  new-feature-launch:
+    trigger: "manual"
+    agent: "strategy"
+    steps:
+      - skill: launch-strategy
+        action: "plan"
+      - skill: copywriting
+        action: "draft-landing-page"
+      - skill: email-sequence
+        action: "create-announcement"
+      - skill: social-content
+        action: "create-launch-posts"
+      - skill: paid-ads
+        action: "plan-launch-campaign"
+    output: "reports/launch-{feature}-{date}.md"
+
+  churn-intervention:
+    trigger: "event"
+    event: "churn_signal_detected"
+    agent: "revenue"
+    steps:
+      - skill: churn-prevention
+        action: "diagnose"
+      - skill: email-sequence
+        action: "create-winback"
+      - skill: pricing-strategy
+        action: "evaluate-save-offer"
+    output: "reports/churn-intervention-{date}.md"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# NOTIFICATIONS
+# ─────────────────────────────────────────────────────────────────────────────
+notifications:
+  slack:
+    webhook_env: "ACME_SLACK_WEBHOOK"
+    channel: "#marketing-agents"
+  email:
+    recipients:
+      - "marketing@acme.com"
+    provider: "resend"
+    api_key_env: "ACME_RESEND_KEY"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# GUARDRAILS — safety limits for autonomous actions
+# ─────────────────────────────────────────────────────────────────────────────
+guardrails:
+  require_approval:
+    - "publish_content"
+    - "send_email"
+    - "modify_ads"
+    - "change_pricing"
+  auto_approve:
+    - "generate_report"
+    - "draft_content"
+    - "run_audit"
+    - "pull_analytics"
+  max_daily_actions: 50
+  budget_alert_threshold: 0.8        # alert at 80% of monthly budget
