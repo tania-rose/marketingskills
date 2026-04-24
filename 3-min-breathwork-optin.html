@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free 3-Minute Breathwork for Anxiety | Alchemy of Breath</title>
+  <meta name="description" content="A free 3-minute breathwork practice from Anthony Abbagnano to calm anxiety on the spot. Plus bonus guided meditation and trauma-informed breathwork lesson.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand-green: #2D7D6F;
+      --brand-green-dark: #1F5C52;
+      --brand-gold: #C9A84C;
+      --bg-white: #FFFFFF;
+      --bg-cream: #FAF8F5;
+      --text-dark: #1E1E1E;
+      --text-medium: #5A5A5A;
+      --text-light: #9A9A9A;
+      --border: #E8E4DF;
+      --input-bg: #F7F5F2;
+      --radius-card: 16px;
+      --radius-btn: 8px;
+      --radius-input: 6px;
+      --font: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text-dark);
+      background: var(--bg-white);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      padding: 0 32px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header__logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--brand-green);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .header__logo span { color: var(--brand-gold); }
+
+    /* ── UTILITIES ── */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--brand-gold);
+      margin-bottom: 16px;
+    }
+    .section-pad {
+      padding: 96px 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 64px 0 96px;
+      background: var(--bg-white);
+    }
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--text-dark);
+      margin-bottom: 20px;
+    }
+    .hero__body {
+      color: var(--text-medium);
+      margin-bottom: 24px;
+      font-size: 17px;
+    }
+    .hero__trust {
+      font-size: 14px;
+      color: var(--text-medium);
+    }
+    .hero__trust span {
+      color: var(--brand-gold);
+      margin: 0 6px;
+    }
+
+    /* ── FORM CARD ── */
+    .form-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .form-card__title {
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 24px;
+      color: var(--text-dark);
+    }
+    .form-card label {
+      display: block;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: var(--text-dark);
+    }
+    .form-card input[type="text"],
+    .form-card input[type="email"] {
+      width: 100%;
+      height: 48px;
+      padding: 0 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-input);
+      background: var(--input-bg);
+      font-family: var(--font);
+      font-size: 15px;
+      color: var(--text-dark);
+      transition: border-color 0.2s;
+    }
+    .form-card input:focus {
+      outline: none;
+      border-color: var(--brand-green);
+    }
+    .form-card .field-group {
+      margin-bottom: 16px;
+    }
+    .form-card .btn {
+      margin-top: 8px;
+    }
+    .form-card__micro {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-light);
+      margin-top: 12px;
+    }
+
+    /* ── BUTTONS ── */
+    .btn {
+      display: block;
+      width: 100%;
+      height: 52px;
+      border: none;
+      border-radius: var(--radius-btn);
+      background: var(--brand-green);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn:hover {
+      background: var(--brand-green-dark);
+      transform: scale(1.02);
+    }
+
+    /* ── PROOF STRIP ── */
+    .proof-strip {
+      background: var(--bg-cream);
+      padding: 28px 0;
+    }
+    .proof-strip__row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .proof-strip__item {
+      text-align: center;
+      max-width: 260px;
+    }
+    .proof-strip__stars {
+      color: var(--brand-gold);
+      font-size: 16px;
+      margin-bottom: 6px;
+      letter-spacing: 2px;
+    }
+    .proof-strip__quote {
+      font-style: italic;
+      font-size: 15px;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+    .proof-strip__name {
+      font-size: 13px;
+      color: var(--text-medium);
+    }
+
+    /* ── WHAT YOU GET SECTION ── */
+    .what-you-get {
+      background: var(--bg-white);
+    }
+    .what-you-get__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .wyg-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .wyg-card__badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--bg-white);
+      background: var(--brand-green);
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .wyg-card__badge--bonus {
+      background: var(--brand-gold);
+    }
+    .wyg-card__icon {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+    .wyg-card h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+    }
+    .wyg-card p {
+      font-size: 15px;
+      color: var(--text-medium);
+      line-height: 1.6;
+    }
+
+    /* ── SCIENCE SECTION ── */
+    .science {
+      background: var(--bg-cream);
+      text-align: center;
+    }
+    .science__inner {
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .science h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+    .science p {
+      color: var(--text-medium);
+      margin-bottom: 16px;
+    }
+    .science__accent {
+      color: var(--brand-green);
+      font-weight: 600;
+      font-size: 19px;
+      margin-top: 32px;
+    }
+
+    /* ── ANTHONY SECTION ── */
+    .anthony {
+      background: var(--bg-white);
+    }
+    .anthony__grid {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .anthony__photo {
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 3px solid var(--border);
+      object-fit: cover;
+      background: var(--bg-cream);
+    }
+    .anthony__text .eyebrow { margin-bottom: 8px; }
+    .anthony__text h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .anthony__text p {
+      color: var(--text-medium);
+      margin-bottom: 12px;
+    }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials {
+      background: var(--bg-cream);
+    }
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 32px;
+    }
+    .testimonial-card__quote-mark {
+      font-size: 48px;
+      line-height: 1;
+      color: var(--brand-gold);
+      font-family: Georgia, serif;
+      margin-bottom: 8px;
+    }
+    .testimonial-card__text {
+      font-style: italic;
+      font-size: 16px;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-card__avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bg-cream);
+      border: 2px solid var(--border);
+    }
+    .testimonial-card__name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .testimonial-card__title {
+      font-size: 13px;
+      color: var(--text-medium);
+    }
+
+    /* ── FINAL CTA ── */
+    .final-cta {
+      background: var(--bg-white);
+      text-align: center;
+    }
+    .final-cta__inner {
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .final-cta h2 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .final-cta__sub {
+      color: var(--text-medium);
+      margin-bottom: 40px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1E1E1E;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .footer__inner {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .footer a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer a:hover { color: #fff; }
+    .footer span { margin: 0 8px; }
+
+    /* ── MOBILE STICKY CTA ── */
+    .sticky-cta {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 99;
+      padding: 10px 16px;
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.08);
+    }
+    .sticky-cta .btn { height: 48px; font-size: 14px; }
+
+    /* ── SECTION HEADINGS ── */
+    .section-heading {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero { padding: 32px 0 48px; }
+      .hero__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hero h1 { font-size: 28px; }
+      .hero__body { font-size: 16px; }
+
+      .section-pad { padding: 56px 0; }
+      .section-heading { font-size: 24px; }
+
+      .what-you-get__grid { grid-template-columns: 1fr; }
+
+      .science h2,
+      .anthony__text h2,
+      .final-cta h2 { font-size: 24px; }
+
+      .anthony__grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .anthony__photo {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto;
+      }
+
+      .testimonials__grid { grid-template-columns: 1fr; }
+
+      .proof-strip__row { gap: 24px; }
+
+      .sticky-cta { display: block; }
+
+      .final-cta__inner { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="https://alchemyofbreath.com" class="header__logo" target="_blank">
+      Alchemy <span>of</span> Breath
+    </a>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <div class="eyebrow">Free Breathwork Practice</div>
+          <h1>Calm Your Anxiety<br>in 3 Minutes Flat</h1>
+          <p class="hero__body">
+            A single guided breathwork practice from Anthony Abbagnano,
+            founder of Alchemy of Breath. Three minutes. No experience needed.
+            Plus two bonus lessons on guided meditation and trauma-informed breathwork.
+          </p>
+          <p class="hero__trust">
+            170,000+ breathers <span>&bull;</span> 40+ countries <span>&bull;</span> 20+ years of practice
+          </p>
+        </div>
+        <div class="form-card" id="form-top">
+          <div class="form-card__title">Get the Practice Free</div>
+          <form action="#" method="POST">
+            <div class="field-group">
+              <label for="name-top">First name</label>
+              <input type="text" id="name-top" name="first_name" placeholder="Your first name" required>
+            </div>
+            <div class="field-group">
+              <label for="email-top">Your best email</label>
+              <input type="email" id="email-top" name="email" placeholder="name@email.com" required>
+            </div>
+            <button type="submit" class="btn">Send Me the Practice</button>
+          </form>
+          <p class="form-card__micro">
+            Delivered instantly to your inbox. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <section class="proof-strip">
+    <div class="container">
+      <div class="proof-strip__row">
+        <div class="proof-strip__item">
+          <div class="proof-strip__stars">&starf;&starf;&starf;&starf;&starf;</div>
+          <div class="proof-strip__quote">"A powerful life tool"</div>
+          <div class="proof-strip__name">Tanya</div>
+        </div>
+        <div class="proof-strip__item">
+          <div class="proof-strip__stars">&starf;&starf;&starf;&starf;&starf;</div>
+          <div class="proof-strip__quote">"The one thing that actually held"</div>
+          <div class="proof-strip__name">Rita</div>
+        </div>
+        <div class="proof-strip__item">
+          <div class="proof-strip__stars">&starf;&starf;&starf;&starf;&starf;</div>
+          <div class="proof-strip__quote">"Something shifted in my first session"</div>
+          <div class="proof-strip__name">Steph</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="what-you-get section-pad">
+    <div class="container">
+      <h2 class="section-heading">What you will receive</h2>
+      <div class="what-you-get__grid">
+        <div class="wyg-card">
+          <div class="wyg-card__badge">Core Practice</div>
+          <div class="wyg-card__icon">&diamondsuit;</div>
+          <h3>3-Minute Anxiety Reset</h3>
+          <p>
+            A guided breathwork practice you can use anywhere.
+            In your car before a meeting. At your desk when the
+            email hits. Before a conversation you have been avoiding.
+            Three minutes to shift your nervous system from
+            fight-or-flight back to presence.
+          </p>
+        </div>
+        <div class="wyg-card">
+          <div class="wyg-card__badge wyg-card__badge--bonus">Bonus</div>
+          <div class="wyg-card__icon">&sung;</div>
+          <h3>Guided Meditation<br>by Anthony</h3>
+          <p>
+            A full guided meditation led by Anthony Abbagnano
+            himself. Go deeper than the breath. Settle your
+            mind and reconnect with the stillness underneath
+            the noise.
+          </p>
+        </div>
+        <div class="wyg-card">
+          <div class="wyg-card__badge wyg-card__badge--bonus">Bonus</div>
+          <div class="wyg-card__icon">&hearts;</div>
+          <h3>Trauma &amp;<br>Breathwork</h3>
+          <p>
+            A lesson on how breathwork supports trauma release
+            safely. Understand what happens in your body during
+            a breathwork session and why it can unlock what
+            years of talk therapy sometimes cannot.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE -->
+  <section class="science section-pad">
+    <div class="container">
+      <div class="science__inner">
+        <h2>You are using less than 33% of your lungs.</h2>
+        <p>
+          When you breathe high in your chest, your body reads it as danger.
+          Your heart rate climbs. Your nervous system stays switched on.
+          Anxiety lives in your body even when nothing is wrong.
+        </p>
+        <p class="science__accent">
+          You can change that in the next three minutes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANTHONY -->
+  <section class="anthony section-pad">
+    <div class="container">
+      <div class="anthony__grid">
+        <!-- Replace src with actual Anthony photo -->
+        <img
+          src="https://alchemyofbreath.com/wp-content/uploads/2023/anthony-placeholder.jpg"
+          alt="Anthony Abbagnano, founder of Alchemy of Breath"
+          class="anthony__photo"
+          loading="lazy"
+        >
+        <div class="anthony__text">
+          <div class="eyebrow">Your Guide</div>
+          <h2>Anthony Abbagnano</h2>
+          <p>
+            Founder of Alchemy of Breath. For over two decades he has guided
+            more than 170,000 people through breathwork across 40+ countries.
+          </p>
+          <p>
+            He has trained hundreds of certified facilitators and built
+            a community that spans six continents.
+          </p>
+          <p>He teaches from what he has lived.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials section-pad">
+    <div class="container">
+      <div class="testimonials__grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__quote-mark">&ldquo;</div>
+          <p class="testimonial-card__text">
+            A profound and powerful life tool. The first time I used these
+            techniques, something shifted that I did not know was stuck.
+            I use the practice every morning now. It is the one thing
+            that has held.
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"></div>
+            <div>
+              <div class="testimonial-card__name">Tanya</div>
+              <div class="testimonial-card__title">Alchemy of Breath community</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-card__quote-mark">&ldquo;</div>
+          <p class="testimonial-card__text">
+            The support from the school has been so deep. The tools Anthony
+            shares helped me process things I never thought I could touch.
+            Breathwork gave me back a sense of safety in my own body that
+            I had been missing for years.
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar"></div>
+            <div>
+              <div class="testimonial-card__name">Rita</div>
+              <div class="testimonial-card__title">Breathwork student</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta section-pad" id="final-form">
+    <div class="container">
+      <div class="final-cta__inner">
+        <h2>Your next breath is a decision.</h2>
+        <p class="final-cta__sub">
+          The practice takes three minutes. The bonuses go deeper.
+          Everything is free. It will be in your inbox within a minute.
+        </p>
+        <div class="form-card">
+          <div class="form-card__title">Get the Practice Free</div>
+          <form action="#" method="POST">
+            <div class="field-group">
+              <label for="name-bottom">First name</label>
+              <input type="text" id="name-bottom" name="first_name" placeholder="Your first name" required>
+            </div>
+            <div class="field-group">
+              <label for="email-bottom">Your best email</label>
+              <input type="email" id="email-bottom" name="email" placeholder="name@email.com" required>
+            </div>
+            <button type="submit" class="btn">Send Me the Practice</button>
+          </form>
+          <p class="form-card__micro">
+            No credit card. No hidden fees. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="https://alchemyofbreath.com">Alchemy of Breath</a>
+      <span>&bull;</span>
+      <a href="https://alchemyofbreath.com/privacy-policy">Privacy Policy</a>
+      <span>&bull;</span>
+      <a href="https://alchemyofbreath.com/contact">Contact</a>
+    </div>
+  </footer>
+
+  <!-- MOBILE STICKY CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <button class="btn" onclick="document.getElementById('final-form').scrollIntoView({behavior:'smooth'})">
+      Send Me the Practice
+    </button>
+  </div>
+
+  <script>
+    // Show/hide sticky CTA based on whether form is in view
+    (function() {
+      var topForm = document.getElementById('form-top');
+      var bottomForm = document.getElementById('final-form');
+      var sticky = document.getElementById('stickyCta');
+
+      if (!sticky || window.innerWidth > 768) return;
+
+      function isInView(el) {
+        var rect = el.getBoundingClientRect();
+        return rect.top < window.innerHeight && rect.bottom > 0;
+      }
+
+      window.addEventListener('scroll', function() {
+        if (isInView(topForm) || isInView(bottomForm)) {
+          sticky.style.display = 'none';
+        } else {
+          sticky.style.display = 'block';
+        }
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>

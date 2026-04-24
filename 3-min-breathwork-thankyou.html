@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>You are in. Check your inbox. | Alchemy of Breath</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand-green: #2D7D6F;
+      --brand-green-dark: #1F5C52;
+      --brand-gold: #C9A84C;
+      --bg-white: #FFFFFF;
+      --bg-cream: #FAF8F5;
+      --text-dark: #1E1E1E;
+      --text-medium: #5A5A5A;
+      --text-light: #9A9A9A;
+      --border: #E8E4DF;
+      --radius-card: 16px;
+      --radius-btn: 8px;
+      --font: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      color: var(--text-dark);
+      background: var(--bg-white);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      align-items: center;
+      height: 64px;
+      padding: 0 32px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-white);
+    }
+    .header__logo {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--brand-green);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+    .header__logo span { color: var(--brand-gold); }
+
+    /* ── CONTAINER ── */
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .container--wide {
+      max-width: 1120px;
+    }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--brand-gold);
+      margin-bottom: 16px;
+    }
+
+    /* ── CONFIRMATION HERO ── */
+    .confirm {
+      text-align: center;
+      padding: 80px 0 64px;
+    }
+    .confirm__check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      margin-bottom: 24px;
+    }
+    .confirm__check svg {
+      width: 36px;
+      height: 36px;
+      stroke: #fff;
+      stroke-width: 3;
+      fill: none;
+    }
+    .confirm h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .confirm p {
+      color: var(--text-medium);
+      font-size: 17px;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* ── STEPS ── */
+    .steps {
+      padding: 0 0 64px;
+    }
+    .steps__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .step-card {
+      text-align: center;
+      padding: 24px;
+      background: var(--bg-cream);
+      border-radius: var(--radius-card);
+    }
+    .step-card__number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    .step-card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      font-size: 14px;
+      color: var(--text-medium);
+      line-height: 1.5;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── iJOURNEY SECTION ── */
+    .ijourney {
+      padding: 80px 0;
+      background: var(--bg-white);
+    }
+    .ijourney__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .ijourney__content .eyebrow { margin-bottom: 12px; }
+    .ijourney__content h2 {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .ijourney__content p {
+      color: var(--text-medium);
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+    .ijourney__features {
+      list-style: none;
+      margin-bottom: 24px;
+    }
+    .ijourney__features li {
+      padding: 8px 0;
+      font-size: 15px;
+      color: var(--text-medium);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .ijourney__features li::before {
+      content: "\2713";
+      color: var(--brand-green);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    .ijourney__price {
+      margin-bottom: 24px;
+    }
+    .ijourney__price-tag {
+      font-size: 14px;
+      color: var(--text-light);
+      text-decoration: line-through;
+      margin-right: 8px;
+    }
+    .ijourney__price-now {
+      font-size: 32px;
+      font-weight: 700;
+      color: var(--brand-green);
+    }
+    .ijourney__price-label {
+      font-size: 14px;
+      color: var(--text-medium);
+      margin-top: 4px;
+    }
+    .ijourney__credit {
+      background: var(--bg-cream);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .ijourney__credit p {
+      font-size: 14px;
+      color: var(--text-dark);
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+    .ijourney__credit strong {
+      color: var(--brand-green);
+    }
+
+    .btn-ijourney {
+      display: inline-block;
+      padding: 16px 32px;
+      border: none;
+      border-radius: var(--radius-btn);
+      background: var(--brand-green);
+      color: #fff;
+      font-family: var(--font);
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-ijourney:hover {
+      background: var(--brand-green-dark);
+      transform: scale(1.02);
+    }
+
+    /* ── iJOURNEY VISUAL CARD ── */
+    .ijourney__visual {
+      background: var(--bg-cream);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .ijourney__visual-header {
+      background: var(--brand-green);
+      color: #fff;
+      padding: 20px 24px;
+      text-align: center;
+    }
+    .ijourney__visual-header h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .ijourney__visual-header p {
+      font-size: 13px;
+      opacity: 0.85;
+      margin: 0;
+    }
+    .ijourney__visual-modules {
+      padding: 24px;
+    }
+    .ijourney__module {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--text-medium);
+    }
+    .ijourney__module:last-child { border-bottom: none; }
+    .ijourney__module-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--brand-green);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── BOOK UPSELL ── */
+    .book-upsell {
+      padding: 64px 0;
+      background: var(--bg-cream);
+      text-align: center;
+    }
+    .book-upsell__inner {
+      max-width: 560px;
+      margin: 0 auto;
+    }
+    .book-upsell h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .book-upsell p {
+      font-size: 16px;
+      color: var(--text-medium);
+      margin-bottom: 24px;
+    }
+    .book-upsell__price {
+      font-size: 14px;
+      color: var(--text-medium);
+      margin-bottom: 20px;
+    }
+    .book-upsell__price strong {
+      font-size: 28px;
+      color: var(--brand-green);
+      font-weight: 700;
+    }
+    .btn-book {
+      display: inline-block;
+      padding: 14px 28px;
+      border: 1.5px solid var(--brand-green);
+      border-radius: var(--radius-btn);
+      background: transparent;
+      color: var(--brand-green);
+      font-family: var(--font);
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn-book:hover {
+      background: var(--brand-green);
+      color: #fff;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: #1E1E1E;
+      padding: 20px 0;
+      text-align: center;
+    }
+    .footer__inner {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+    .footer a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer a:hover { color: #fff; }
+    .footer .sep { margin: 0 8px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .confirm { padding: 48px 0 40px; }
+      .confirm h1 { font-size: 28px; }
+      .steps__grid { grid-template-columns: 1fr; gap: 16px; }
+      .ijourney { padding: 56px 0; }
+      .ijourney__inner { grid-template-columns: 1fr; gap: 32px; }
+      .ijourney__content h2 { font-size: 24px; }
+      .ijourney__price-now { font-size: 28px; }
+      .book-upsell { padding: 48px 0; }
+      .book-upsell h2 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <a href="https://alchemyofbreath.com" class="header__logo" target="_blank">
+      Alchemy <span>of</span> Breath
+    </a>
+  </header>
+
+  <!-- CONFIRMATION -->
+  <section class="confirm">
+    <div class="container">
+      <div class="confirm__check">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h1>You are in. Check your inbox.</h1>
+      <p>
+        Your 3-minute breathwork practice and bonus lessons are on their way.
+        Look for an email from Alchemy of Breath in the next few minutes.
+        Check your spam folder if you do not see it.
+      </p>
+    </div>
+  </section>
+
+  <!-- NEXT STEPS -->
+  <section class="steps">
+    <div class="container">
+      <div class="steps__grid">
+        <div class="step-card">
+          <div class="step-card__number">1</div>
+          <h3>Check your inbox</h3>
+          <p>Your practice and bonuses are landing now. Look for "Your 3-Minute Breathwork Practice" from Alchemy of Breath.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__number">2</div>
+          <h3>Try the practice</h3>
+          <p>Find a quiet moment. Three minutes is all you need. Your car, your desk, your bed before sleep. Anywhere works.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-card__number">3</div>
+          <h3>Go deeper</h3>
+          <p>Watch the bonus lessons on meditation and trauma-informed breathwork. Then decide if you want to take the next step below.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- iJOURNEY SEED -->
+  <section class="ijourney">
+    <div class="container container--wide">
+      <div class="ijourney__inner">
+
+        <div class="ijourney__content">
+          <div class="eyebrow">If you want to go deeper</div>
+          <h2>The Alchemist: An Inner Journey to Yourself</h2>
+          <p>
+            The 7-module live program that our certified facilitators
+            complete before they lead others. Now open to anyone called
+            to the work.
+          </p>
+
+          <ul class="ijourney__features">
+            <li>7 live modules over 7 weeks with Anthony and senior facilitators</li>
+            <li>Weekly live classes with morning and evening time options</li>
+            <li>Small-group mentor circles of 5 people</li>
+            <li>25-person trainer circles with personal feedback</li>
+            <li>Weekly support calls with Anthony or Ron Bunzl</li>
+            <li>Full recording library and 1-year platform access</li>
+          </ul>
+
+          <div class="ijourney__credit">
+            <p>
+              Your <strong>$699 tuition is fully credited</strong> toward
+              Alchemy of Breath Facilitator Training if you enroll within
+              6 months of completing iJourney.
+            </p>
+          </div>
+
+          <div class="ijourney__price">
+            <span class="ijourney__price-tag">$3,999</span>
+            <span class="ijourney__price-now">$699</span>
+            <div class="ijourney__price-label">One-time payment. Next cohort starts soon.</div>
+          </div>
+
+          <a href="https://alchemyofbreath.com/the-alchemist/" class="btn-ijourney">
+            Learn More About iJourney
+          </a>
+        </div>
+
+        <div class="ijourney__visual">
+          <div class="ijourney__visual-header">
+            <h3>The Alchemist</h3>
+            <p>7 modules. 7 weeks. Live with Anthony.</p>
+          </div>
+          <div class="ijourney__visual-modules">
+            <div class="ijourney__module"><span class="ijourney__module-num">1</span> Opening the Book of Your Life</div>
+            <div class="ijourney__module"><span class="ijourney__module-num">2</span> The Call</div>
+            <div class="ijourney__module"><span class="ijourney__module-num">3</span> The Inner Child</div>
+            <div class="ijourney__module"><span class="ijourney__module-num">4</span> Embracing Your Shadows</div>
+            <div class="ijourney__module"><span class="ijourney__module-num">5</span> Finding the Treasure</div>
+            <div class="ijourney__module"><span class="ijourney__module-num">6</span> Atonement and Return</div>
+            <div class="ijourney__module"><span class="ijourney__module-num">7</span> The Return</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOK UPSELL -->
+  <section class="book-upsell">
+    <div class="container">
+      <div class="book-upsell__inner">
+        <div class="eyebrow">While you wait for your email</div>
+        <h2>Outer Chaos, Inner Calm</h2>
+        <p>
+          Anthony's book on turning stress into strength.
+          Practical exercises you can use alongside the breathwork practice
+          you just received.
+        </p>
+        <div class="book-upsell__price">
+          E-book from <strong>$1</strong>
+        </div>
+        <a href="https://alchemyofbreath.com/shop/" class="btn-book">
+          Get the Book
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="https://alchemyofbreath.com">Alchemy of Breath</a>
+      <span class="sep">&bull;</span>
+      <a href="https://alchemyofbreath.com/privacy-policy">Privacy Policy</a>
+      <span class="sep">&bull;</span>
+      <a href="https://alchemyofbreath.com/contact">Contact</a>
+    </div>
+  </footer>
+
+  <!-- Fire conversion pixel on page load -->
+  <script>
+    // Meta Pixel: Lead event
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', { content_name: '3min-breathwork-optin' });
+    }
+    // GA4: custom event
+    if (typeof gtag === 'function') {
+      gtag('event', 'lead_magnet_optin', {
+        lead_magnet: '3min-breathwork',
+        page_location: window.location.href
+      });
+    }
+  </script>
+
+</body>
+</html>
